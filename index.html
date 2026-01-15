@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitStk Legal - Recuperación Internacional de Capitales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        /* Floating shapes */
+        .shape {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .shape1 { width: 300px; height: 300px; background: #3498db; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape2 { width: 200px; height: 200px; background: #2ecc71; top: 60%; left: 70%; animation-delay: 2s; }
+        .shape3 { width: 150px; height: 150px; background: #e74c3c; top: 30%; right: 10%; animation-delay: 4s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(30px); }
+        }
+        
+        /* Header */
+        header {
+            background: rgba(15, 32, 39, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #3498db;
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section with Financial Graphics */
+        .hero {
+            position: relative;
+            background: 
+                linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(52,152,219,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="%230f2027"/><rect width="1200" height="600" fill="url(%23grid)"/><g opacity="0.3"><path d="M100,400 L200,350 L300,380 L400,300 L500,320 L600,250 L700,280 L800,200 L900,230 L1000,180 L1100,150" fill="none" stroke="%233498db" stroke-width="3"/><circle cx="100" cy="400" r="5" fill="%233498db"/><circle cx="300" cy="380" r="5" fill="%233498db"/><circle cx="600" cy="250" r="5" fill="%233498db"/><circle cx="1000" cy="180" r="5" fill="%233498db"/></g><g opacity="0.2"><path d="M50,450 L150,420 L250,440 L350,380 L450,400 L550,340 L650,360 L750,300 L850,320 L950,280 L1050,250 L1150,220" fill="none" stroke="%232ecc71" stroke-width="2" stroke-dasharray="5,5"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 2rem 8rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(15,32,39,0.8) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            color: #ecf0f1;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            margin-top: -4rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+        }
+        
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #546e7a;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #34495e;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            margin: 2rem 0;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #3498db, #2ecc71);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(52, 152, 219, 0.3);
+            border-color: #3498db;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: #1a2a3a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #546e7a;
+            line-height: 1.9;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(46, 204, 113, 0.05));
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid rgba(52, 152, 219, 0.2);
+        }
+        
+        .contact-info h3 {
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-item strong {
+            color: #2c4a62;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .office-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(52, 152, 219, 0.2);
+        }
+        
+        .office-section h4 {
+            color: #2c4a62;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .office {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .office strong {
+            color: #1a2a3a;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        input, textarea {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(15, 32, 39, 0.98);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-content p {
+            margin-bottom: 1rem;
+            color: #bdc3c7;
+        }
+        
+        .legal-links {
+            margin: 2rem 0;
+        }
+        
+        .legal-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        .legal-links a:hover {
+            color: #2ecc71;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+
+    <header>
+        <nav>
+            <div class="logo">BitStk Legal</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>BitStk Legal</h1>
+            <div class="subtitle">Recuperación Internacional de Capitales</div>
+            <p>Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.</p>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Jurisdicciones</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$1000M+</div>
+                <div class="stat-label">Capitales Recuperados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Tasa de Éxito</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="quienes-somos">
+        <h2>Quiénes Somos</h2>
+        <div class="about-content">
+            <p>BitStk Legal es una firma legal internacional especializada en la recuperación de capitales y el cumplimiento normativo en entornos financieros complejos y multijurisdiccionales.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Nuestra misión:</strong> Brindar representación legal de excelencia a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+            </div>
+            
+            <p>Operamos bajo los más altos estándares de profesionalismo, confidencialidad y compromiso ético. Nuestro equipo multidisciplinario combina expertise legal con conocimiento profundo de mercados financieros internacionales, regulación bancaria y cooperación judicial transnacional.</p>
+            
+            <p>Con presencia en Nueva York y San Francisco, y red de corresponsalía global, coordinamos estrategias legales efectivas que protegen los intereses patrimoniales de nuestros clientes frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas.</p>
+            
+            <p>Nuestro enfoque integra negociaciones estratégicas, acciones judiciales coordinadas y colaboración con autoridades y asesores internacionales, siempre orientado a la restitución efectiva del patrimonio afectado.</p>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios Especializados</h2>
+        <p class="section-subtitle">Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Recuperación Internacional de Capitales</h3>
+                <p>Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+                <p style="margin-top: 1rem;">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Cumplimiento Normativo Internacional (Compliance)</h3>
+                <p>Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.</p>
+                <p style="margin-top: 1rem;">Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p class="section-subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <div class="contact-item">
+                    <strong>📧 Email Corporativo</strong>
+                    <span>soporte@bitstk.online</span>
+                </div>
+                <div class="contact-item">
+                    <strong>📱 WhatsApp Legal y Cartera</strong>
+                    <span>+1 (561) 240-4539</span>
+                </div>
+                <div class="contact-item">
+                    <strong>🕐 Horario de Atención</strong>
+                    <span>Lunes a Viernes, 9:00 AM - 6:00 PM EST</span>
+                </div>
+                
+                <div class="office-section">
+                    <h4>🏢 Nuestras Oficinas</h4>
+                    <div class="office">
+                        <strong>New York Office</strong>
+                        98 Park Avenue, Suite 1000<br>
+                        New York, NY 10178<br>
+                        United States
+                    </div>
+                    <div class="office">
+                        <strong>San Francisco Office</strong>
+                        88 California Street, Suite 1050<br>
+                        San Francisco, CA 94111<br>
+                        United States
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" required placeholder="Describa brevemente su situación. Toda información será tratada de manera confidencial."></textarea>
+                </div>
+                
+                <button type="submit">Enviar Consulta Confidencial</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem;"><strong>BitStk Legal</strong></p>
+            <p>Recuperación Internacional de Capitales | Cumplimiento Normativo</p>
+            
+            <div class="legal-links">
+                <a href="#aviso-legal">Aviso Legal</a>
+                <a href="#privacidad">Política de Privacidad</a>
+                <a href="#cookies">Política de Cookies</a>
+                <a href="#terminos">Términos y Condiciones</a>
+            </div>
+            
+            <p style="margin-top: 2rem;">© 2025 BitStk Legal. Todos los derechos reservados.</p>
+            
+            <p style="font-size: 0.9rem; margin-top: 2rem; color: #95a5a6; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                <strong>Aviso Importante:</strong> La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable. Para una evaluación profesional de su situación, le invitamos a contactar directamente con nuestros especialistas.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por su consulta. Su mensaje ha sido recibido de forma confidencial. Nos pondremos en contacto con usted a la brevedad.');
+            this.reset();
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                shape.style.transform = `translateY(${scrolled * (0.3 + index * 0.1)}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
