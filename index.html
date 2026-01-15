@@ -665,7 +665,7 @@
                 </div>
             </div>
             
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/xqeeadjv" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre completo *</label>
                     <input type="text" id="nombre" required>
@@ -673,17 +673,17 @@
                 
                 <div class="form-group">
                     <label for="email">Correo electrónico *</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
-                    <input type="text" id="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
+                   <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
                 </div>
                 
                 <div class="form-group">
                     <label for="mensaje">Mensaje *</label>
-                    <textarea id="mensaje" required placeholder="Describa brevemente su situación. Toda información será tratada de manera confidencial."></textarea>
+                    <textarea id="mensaje" name="mensaje" required placeholder="Describa brevemente su situación. Toda información será tratada de manera confidencial."></textarea>
                 </div>
                 
                 <button type="submit">Enviar Consulta Confidencial</button>
@@ -723,12 +723,7 @@
             });
         });
 
-        // Form handling
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Gracias por su consulta. Su mensaje ha sido recibido de forma confidencial. Nos pondremos en contacto con usted a la brevedad.');
-            this.reset();
-        });
+       
 
         // Parallax effect on scroll
         window.addEventListener('scroll', () => {
@@ -740,4 +735,5 @@
         });
     </script>
 </body>
+
 </html>
