@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>BitStk Legal - Recuperación Internacional de Capitales</title>
     <title>BitStk Legal - Recuperación Internacional de Capitales</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -544,7 +545,90 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+  /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #95a5a6;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: #2c3e50;
+        }
+        
+        .modal-content h2 {
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            padding-right: 3rem;
+        }
+        
+        .modal-content h3 {
+            color: #2c4a62;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .modal-content p {
+            color: #546e7a;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-content li {
+            color: #546e7a;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }  </style>
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -614,13 +698,12 @@
         <h2>Servicios Especializados</h2>
         <p class="section-subtitle">Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional</p>
         
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">💼</div>
-                <h3>Recuperación Internacional de Capitales</h3>
-                <p>Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
-                <p style="margin-top: 1rem;">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
-            </div>
+        <div class="legal-links">
+    <a href="#" onclick="openModal('avisoLegal'); return false;">Aviso Legal</a>
+    <a href="#" onclick="openModal('privacidad'); return false;">Política de Privacidad</a>
+    <a href="#" onclick="openModal('cookies'); return false;">Política de Cookies</a>
+    <a href="#" onclick="openModal('terminos'); return false;">Términos y Condiciones</a>
+</div>
             
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
@@ -713,7 +796,141 @@
             </p>
         </div>
     </footer>
+<!-- Modals -->
+    <div id="avisoLegal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('avisoLegal')">&times;</button>
+            <h2>Aviso Legal</h2>
+            
+            <h3>1. Datos Identificativos</h3>
+            <p><strong>Titular:</strong> BitStk Legal<br>
+            <strong>Correo electrónico:</strong> soporte@bitstk.online<br>
+            <strong>Dominio:</strong> bitstk.online</p>
+            
+            <h3>2. Objeto</h3>
+            <p>El presente Aviso Legal regula el uso y utilización del sitio web bitstk.online, del que es titular BitStk Legal.</p>
+            <p>La navegación por el sitio web atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
+            
+            <h3>3. Propiedad Intelectual e Industrial</h3>
+            <p>Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, links y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de BitStk Legal, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación reconocidos por la normativa vigente en materia de propiedad intelectual sobre los mismos.</p>
+            
+            <h3>4. Responsabilidad</h3>
+            <p>BitStk Legal no se hace responsable de la información y contenidos almacenados en foros, redes sociales o cualesquier otro medio que permita a terceros publicar contenidos de forma independiente en el sitio web.</p>
+            <p>La información proporcionada en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal específico. Para consultas concretas, es necesario contactar directamente con nuestros profesionales.</p>
+            
+            <h3>5. Jurisdicción</h3>
+            <p>Para cualquier controversia que pudiera derivarse del acceso o uso de este sitio web, será de aplicación la legislación vigente, sometiéndose las partes a los Juzgados y Tribunales del domicilio del usuario.</p>
+        </div>
+    </div>
 
+    <div id="privacidad" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
+            <h2>Política de Privacidad</h2>
+            
+            <h3>1. Responsable del Tratamiento</h3>
+            <p><strong>Identidad:</strong> BitStk Legal<br>
+            <strong>Correo electrónico:</strong> soporte@bitstk.online<br>
+            <strong>Sitio web:</strong> bitstk.online</p>
+            
+            <h3>2. Finalidad del Tratamiento de Datos</h3>
+            <p>Los datos personales que nos proporcione a través del formulario de contacto serán tratados con las siguientes finalidades:</p>
+            <ul>
+                <li>Atender y gestionar las consultas realizadas</li>
+                <li>Proporcionar información sobre nuestros servicios legales</li>
+                <li>Mantener comunicación profesional relacionada con su consulta</li>
+            </ul>
+            
+            <h3>3. Legitimación</h3>
+            <p>La base legal para el tratamiento de sus datos es el consentimiento otorgado mediante el envío del formulario de contacto.</p>
+            
+            <h3>4. Conservación de Datos</h3>
+            <p>Los datos personales proporcionados se conservarán mientras sean necesarios para atender su consulta y durante el plazo legalmente establecido para el cumplimiento de obligaciones legales.</p>
+            
+            <h3>5. Destinatarios</h3>
+            <p>Los datos no serán cedidos a terceros, salvo obligación legal. Utilizamos proveedores de servicios de confianza que pueden tener acceso a sus datos únicamente para prestar servicios en nuestro nombre.</p>
+            
+            <h3>6. Derechos del Usuario</h3>
+            <p>Puede ejercer los siguientes derechos:</p>
+            <ul>
+                <li>Derecho de acceso a sus datos personales</li>
+                <li>Derecho de rectificación de datos inexactos</li>
+                <li>Derecho de supresión cuando los datos ya no sean necesarios</li>
+                <li>Derecho de limitación del tratamiento</li>
+                <li>Derecho de oposición al tratamiento</li>
+                <li>Derecho a la portabilidad de los datos</li>
+            </ul>
+            <p>Para ejercer estos derechos, puede contactarnos en: soporte@bitstk.online</p>
+            
+            <h3>7. Seguridad</h3>
+            <p>Hemos adoptado medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso no autorizado, la alteración, divulgación o destrucción.</p>
+            
+            <h3>8. Modificaciones</h3>
+            <p>Nos reservamos el derecho de modificar la presente política de privacidad para adaptarla a novedades legislativas o jurisprudenciales.</p>
+        </div>
+    </div>
+
+    <div id="cookies" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('cookies')">&times;</button>
+            <h2>Política de Cookies</h2>
+            
+            <h3>1. ¿Qué son las cookies?</h3>
+            <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Permiten que el sitio web recuerde sus acciones y preferencias durante un período de tiempo.</p>
+            
+            <h3>2. Cookies utilizadas en este sitio</h3>
+            <p>Este sitio web actualmente no utiliza cookies de seguimiento ni análisis. En caso de implementarse en el futuro, se actualizará esta política y se solicitará su consentimiento cuando sea necesario.</p>
+            
+            <h3>3. Cookies de terceros</h3>
+            <p>Algunos servicios externos que utilizamos (como Formspree para el formulario de contacto o GitHub Pages para el hosting) pueden establecer sus propias cookies. Le recomendamos revisar las políticas de privacidad de estos servicios:</p>
+            <ul>
+                <li>Formspree: <a href="https://formspree.io/legal/privacy-policy/" target="_blank">https://formspree.io/legal/privacy-policy/</a></li>
+                <li>GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies" target="_blank">https://docs.github.com/en/site-policy/privacy-policies</a></li>
+            </ul>
+            
+            <h3>4. Cómo gestionar las cookies</h3>
+            <p>Puede configurar su navegador para aceptar o rechazar cookies. La mayoría de los navegadores aceptan cookies automáticamente, pero puede modificar la configuración para bloquearlas.</p>
+            <p><strong>Nota:</strong> Bloquear todas las cookies puede afectar la funcionalidad de algunos sitios web.</p>
+            
+            <h3>5. Más información</h3>
+            <p>Para cualquier duda sobre nuestra política de cookies, puede contactarnos en: soporte@bitstk.online</p>
+        </div>
+    </div>
+
+    <div id="terminos" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('terminos')">&times;</button>
+            <h2>Términos y Condiciones de Uso</h2>
+            
+            <h3>1. Aceptación de los Términos</h3>
+            <p>Al acceder y utilizar este sitio web, usted acepta quedar vinculado por estos términos y condiciones de uso y por nuestra política de privacidad.</p>
+            
+            <h3>2. Uso del Sitio Web</h3>
+            <p>El usuario se compromete a utilizar el sitio web y sus servicios de conformidad con la ley, el presente Aviso Legal, y las demás condiciones, reglamentos e instrucciones que, en su caso, pudieran ser de aplicación.</p>
+            <p>Queda prohibido el uso del sitio web con fines ilícitos o que perjudiquen o impidan su normal funcionamiento.</p>
+            
+            <h3>3. Propiedad Intelectual</h3>
+            <p>Todo el contenido del sitio web, incluyendo pero no limitado a textos, gráficos, logos, iconos, imágenes y software, es propiedad de BitStk Legal o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual.</p>
+            
+            <h3>4. Limitación de Responsabilidad</h3>
+            <p>La información proporcionada en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal específico aplicable a ningún caso particular.</p>
+            <p>BitStk Legal no garantiza la exactitud, completitud o actualidad de la información contenida en el sitio web y no asume responsabilidad por daños derivados del uso de dicha información.</p>
+            
+            <h3>5. Enlaces a Terceros</h3>
+            <p>Este sitio web puede contener enlaces a sitios web de terceros. BitStk Legal no controla ni asume responsabilidad por el contenido, políticas de privacidad o prácticas de sitios web de terceros.</p>
+            
+            <h3>6. Modificaciones</h3>
+            <p>BitStk Legal se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor desde su publicación en el sitio web.</p>
+            
+            <h3>7. Contacto</h3>
+            <p>Para cualquier consulta sobre estos términos y condiciones, puede contactarnos en:</p>
+            <p><strong>Email:</strong> soporte@bitstk.online<br>
+            <strong>WhatsApp:</strong> +1 (561) 240-4539</p>
+            
+            <h3>8. Ley Aplicable y Jurisdicción</h3>
+            <p>Estos términos se rigen por la legislación aplicable. Para cualquier controversia, las partes se someten a los tribunales competentes del domicilio del usuario.</p>
+        </div>
+    </div>
     <script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -737,9 +954,28 @@
             });
         });
     </script>
+    // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
 </body>
 
 </html>
+
 
 
 
