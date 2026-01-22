@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>BitStk Legal - Recuperación Internacional de Capitales</title>
-    <title>BitStk Legal - Recuperación Internacional de Capitales</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
-    <style>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         * {
             margin: 0;
@@ -128,12 +125,12 @@
             width: 100%;
         }
         
-        /* Hero Section with Financial Graphics */
+        /* Hero Section */
         .hero {
             position: relative;
             background: 
                 linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(52,152,219,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="%230f2027"/><rect width="1200" height="600" fill="url(%23grid)"/><g opacity="0.3"><path d="M100,400 L200,350 L300,380 L400,300 L500,320 L600,250 L700,280 L800,200 L900,230 L1000,180 L1100,150" fill="none" stroke="%233498db" stroke-width="3"/><circle cx="100" cy="400" r="5" fill="%233498db"/><circle cx="300" cy="380" r="5" fill="%233498db"/><circle cx="600" cy="250" r="5" fill="%233498db"/><circle cx="1000" cy="180" r="5" fill="%233498db"/></g><g opacity="0.2"><path d="M50,450 L150,420 L250,440 L350,380 L450,400 L550,340 L650,360 L750,300 L850,320 L950,280 L1050,250 L1150,220" fill="none" stroke="%232ecc71" stroke-width="2" stroke-dasharray="5,5"/></g></svg>');
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(52,152,219,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="%230f2027"/><rect width="1200" height="600" fill="url(%23grid)"/><g opacity="0.3"><path d="M100,400 L200,350 L300,380 L400,300 L500,320 L600,250 L700,280 L800,200 L900,230 L1000,180 L1100,150" fill="none" stroke="%233498db" stroke-width="3"/><circle cx="100" cy="400" r="5" fill="%233498db"/><circle cx="300" cy="380" r="5" fill="%233498db"/><circle cx="600" cy="250" r="5" fill="%233498db"/><circle cx="1000" cy="180" r="5" fill="%233498db"/></g></svg>');
             background-size: cover;
             background-position: center;
             color: white;
@@ -303,6 +300,22 @@
             border-radius: 10px;
             border-left: 4px solid #3498db;
             margin: 2rem 0;
+        }
+        
+        /* Grupo Empresarial Section */
+        .regulatory-note {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(192, 57, 43, 0.05));
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            margin-top: 2rem;
+        }
+        
+        .regulatory-note strong {
+            color: #c0392b;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
         /* Services */
@@ -516,36 +529,14 @@
             text-decoration: none;
             margin: 0 1rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
         
         .legal-links a:hover {
             color: #2ecc71;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-        }
-  /* Modal styles */
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -628,7 +619,32 @@
             color: #546e7a;
             line-height: 1.8;
             margin-bottom: 0.5rem;
-        }  </style>
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -694,16 +710,37 @@
         </div>
     </section>
 
+    <section id="grupo-empresarial">
+        <h2>Grupo Empresarial BitStk</h2>
+        <p class="section-subtitle">Solidez corporativa internacional | Cumplimiento | Transparencia</p>
+        
+        <div class="about-content">
+            <p>BitStk Legal forma parte de un grupo empresarial internacional con presencia en distintas jurisdicciones, especializado en soluciones legales, recuperación internacional de capitales y cumplimiento normativo.</p>
+            
+            <p>El grupo mantiene vínculos históricos con entidades fintech y tecnológicas establecidas en el Reino Unido, incluyendo Bitstocks Ltd, empresa que ha operado bajo marcos regulatorios financieros británicos como agente registrado ante la Financial Conduct Authority (FCA), bajo el Reference Number: 902839.</p>
+            
+            <p>Cada entidad del grupo opera de manera jurídica y funcionalmente independiente, conforme a las leyes y regulaciones aplicables en su respectiva jurisdicción.</p>
+            
+            <p>BitStk Legal desarrolla exclusivamente actividades jurídicas, de cumplimiento normativo y consultoría legal internacional, sin prestar servicios financieros regulados ni actuar como entidad financiera.</p>
+            
+            <div class="regulatory-note">
+                <strong>Nota regulatoria:</strong>
+                <p>BitStk Legal no presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="servicios">
         <h2>Servicios Especializados</h2>
         <p class="section-subtitle">Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional</p>
         
-        <div class="legal-links">
-    <a href="#" onclick="openModal('avisoLegal'); return false;">Aviso Legal</a>
-    <a href="#" onclick="openModal('privacidad'); return false;">Política de Privacidad</a>
-    <a href="#" onclick="openModal('cookies'); return false;">Política de Cookies</a>
-    <a href="#" onclick="openModal('terminos'); return false;">Términos y Condiciones</a>
-</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Recuperación Internacional de Capitales</h3>
+                <p>Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+                <p style="margin-top: 1rem;">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
+            </div>
             
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
@@ -754,7 +791,7 @@
             <form class="contact-form" action="https://formspree.io/f/xqeeadjv" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre completo *</label>
-                    <input type="text" id="nombre" required>
+                    <input type="text" id="nombre" name="nombre" required>
                 </div>
                 
                 <div class="form-group">
@@ -764,7 +801,7 @@
                 
                 <div class="form-group">
                     <label for="asunto">Asunto</label>
-                   <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
+                    <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
                 </div>
                 
                 <div class="form-group">
@@ -783,43 +820,44 @@
             <p>Recuperación Internacional de Capitales | Cumplimiento Normativo</p>
             
             <div class="legal-links">
-                <a href="#aviso-legal">Aviso Legal</a>
-                <a href="#privacidad">Política de Privacidad</a>
-                <a href="#cookies">Política de Cookies</a>
-                <a href="#terminos">Términos y Condiciones</a>
+                <a href="#" onclick="openModal('avisoLegal'); return false;">Aviso Legal</a>
+                <a href="#" onclick="openModal('privacidad'); return false;">Política de Privacidad</a>
+                <a href="#" onclick="openModal('cookies'); return false;">Política de Cookies</a>
+                <a href="#" onclick="openModal('terminos'); return false;">Términos y Condiciones</a>
             </div>
             
-            <p style="margin-top: 2rem;">© 2025 BitStk Legal. Todos los derechos reservados.</p>
+            <p style="margin-top: 2rem;">© 2026 BitStk Legal. Todos los derechos reservados.</p>
             
             <p style="font-size: 0.9rem; margin-top: 2rem; color: #95a5a6; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                <strong>Aviso Importante:</strong> La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable. Para una evaluación profesional de su situación, le invitamos a contactar directamente con nuestros especialistas.
+                <strong>Aviso Importante:</strong> La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable.
             </p>
         </div>
     </footer>
-<!-- Modals -->
+
+    <!-- Modals Legales -->
     <div id="avisoLegal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('avisoLegal')">&times;</button>
             <h2>Aviso Legal</h2>
             
-            <h3>1. Datos Identificativos</h3>
-            <p><strong>Titular:</strong> BitStk Legal<br>
-            <strong>Correo electrónico:</strong> soporte@bitstk.online<br>
-            <strong>Dominio:</strong> bitstk.online</p>
+            <h3>1. Titularidad y Objeto</h3>
+            <p>El presente sitio web es operado por <strong>BitStk Legal</strong>, firma dedicada a servicios de recuperación internacional de capitales, cumplimiento normativo y consultoría legal.</p>
             
-            <h3>2. Objeto</h3>
-            <p>El presente Aviso Legal regula el uso y utilización del sitio web bitstk.online, del que es titular BitStk Legal.</p>
-            <p>La navegación por el sitio web atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
+            <h3>2. Carácter Informativo</h3>
+            <p>La información contenida en este sitio tiene carácter meramente informativo y no constituye asesoría legal específica ni crea relación abogado-cliente. Cada caso debe ser evaluado de forma individual conforme a sus circunstancias particulares y al marco legal aplicable.</p>
             
-            <h3>3. Propiedad Intelectual e Industrial</h3>
-            <p>Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, links y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de BitStk Legal, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación reconocidos por la normativa vigente en materia de propiedad intelectual sobre los mismos.</p>
+            <h3>3. Limitación de Responsabilidad</h3>
+            <p>BitStk Legal no garantiza resultados específicos derivados del uso de la información publicada en este sitio web y no se hace responsable por decisiones tomadas por los usuarios basadas únicamente en dicho contenido.</p>
+            <p>La información puede estar sujeta a cambios sin previo aviso. BitStk Legal no asume responsabilidad por errores, omisiones o desactualización de los contenidos.</p>
             
-            <h3>4. Responsabilidad</h3>
-            <p>BitStk Legal no se hace responsable de la información y contenidos almacenados en foros, redes sociales o cualesquier otro medio que permita a terceros publicar contenidos de forma independiente en el sitio web.</p>
-            <p>La información proporcionada en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal específico. Para consultas concretas, es necesario contactar directamente con nuestros profesionales.</p>
+            <h3>4. Propiedad Intelectual</h3>
+            <p>Todos los contenidos de este sitio web, incluyendo textos, diseños, gráficos, logotipos y código fuente, son propiedad de BitStk Legal y están protegidos por leyes de propiedad intelectual aplicables.</p>
             
-            <h3>5. Jurisdicción</h3>
-            <p>Para cualquier controversia que pudiera derivarse del acceso o uso de este sitio web, será de aplicación la legislación vigente, sometiéndose las partes a los Juzgados y Tribunales del domicilio del usuario.</p>
+            <h3>5. Aceptación de Términos</h3>
+            <p>El acceso y uso de este sitio implica la aceptación plena de los presentes términos. Si no está de acuerdo, le rogamos que no utilice este sitio web.</p>
+            
+            <h3>6. Jurisdicción y Ley Aplicable</h3>
+            <p>El uso de este sitio web se regirá por principios generales del derecho internacional y mercantil aplicable, conforme a la naturaleza transnacional de los servicios prestados.</p>
         </div>
     </div>
 
@@ -828,45 +866,63 @@
             <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
             <h2>Política de Privacidad</h2>
             
-            <h3>1. Responsable del Tratamiento</h3>
-            <p><strong>Identidad:</strong> BitStk Legal<br>
-            <strong>Correo electrónico:</strong> soporte@bitstk.online<br>
-            <strong>Sitio web:</strong> bitstk.online</p>
+            <h3>1. Compromiso con la Privacidad</h3>
+            <p><strong>BitStk Legal</strong> se compromete a proteger la privacidad y los datos personales de los usuarios que interactúan con este sitio web.</p>
             
-            <h3>2. Finalidad del Tratamiento de Datos</h3>
-            <p>Los datos personales que nos proporcione a través del formulario de contacto serán tratados con las siguientes finalidades:</p>
+            <h3>2. Datos Recopilados</h3>
+            <p>Los datos personales que puedan ser recopilados a través de este sitio incluyen:</p>
             <ul>
-                <li>Atender y gestionar las consultas realizadas</li>
-                <li>Proporcionar información sobre nuestros servicios legales</li>
-                <li>Mantener comunicación profesional relacionada con su consulta</li>
+                <li>Nombre y apellidos</li>
+                <li>Dirección de correo electrónico</li>
+                <li>Información proporcionada voluntariamente en formularios de contacto</li>
+                <li>Datos de navegación (mediante cookies técnicas)</li>
             </ul>
             
-            <h3>3. Legitimación</h3>
-            <p>La base legal para el tratamiento de sus datos es el consentimiento otorgado mediante el envío del formulario de contacto.</p>
+            <h3>3. Finalidad del Tratamiento</h3>
+            <p>Los datos recopilados serán utilizados exclusivamente para:</p>
+            <ul>
+                <li>Gestionar consultas y solicitudes de información</li>
+                <li>Proporcionar los servicios legales solicitados</li>
+                <li>Cumplir con obligaciones legales y regulatorias</li>
+                <li>Mejorar la calidad del sitio web y los servicios prestados</li>
+            </ul>
             
-            <h3>4. Conservación de Datos</h3>
-            <p>Los datos personales proporcionados se conservarán mientras sean necesarios para atender su consulta y durante el plazo legalmente establecido para el cumplimiento de obligaciones legales.</p>
+            <h3>4. Base Legal</h3>
+            <p>El tratamiento de datos personales se basa en:</p>
+            <ul>
+                <li>El consentimiento del usuario al enviar información a través del sitio</li>
+                <li>La ejecución de medidas precontractuales o contractuales</li>
+                <li>El cumplimiento de obligaciones legales</li>
+            </ul>
             
-            <h3>5. Destinatarios</h3>
-            <p>Los datos no serán cedidos a terceros, salvo obligación legal. Utilizamos proveedores de servicios de confianza que pueden tener acceso a sus datos únicamente para prestar servicios en nuestro nombre.</p>
+            <h3>5. Protección y Confidencialidad</h3>
+            <p>BitStk Legal no comparte, vende ni cede datos personales a terceros, salvo:</p>
+            <ul>
+                <li>Obligación legal o requerimiento de autoridad competente</li>
+                <li>Necesidad para la prestación del servicio legal solicitado</li>
+                <li>Consentimiento expreso del usuario</li>
+            </ul>
             
             <h3>6. Derechos del Usuario</h3>
-            <p>Puede ejercer los siguientes derechos:</p>
+            <p>Los usuarios tienen derecho a:</p>
             <ul>
-                <li>Derecho de acceso a sus datos personales</li>
-                <li>Derecho de rectificación de datos inexactos</li>
-                <li>Derecho de supresión cuando los datos ya no sean necesarios</li>
-                <li>Derecho de limitación del tratamiento</li>
-                <li>Derecho de oposición al tratamiento</li>
-                <li>Derecho a la portabilidad de los datos</li>
+                <li>Acceder a sus datos personales</li>
+                <li>Rectificar datos inexactos o incompletos</li>
+                <li>Solicitar la supresión de sus datos</li>
+                <li>Oponerse al tratamiento</li>
+                <li>Solicitar la limitación del tratamiento</li>
+                <li>Portabilidad de los datos</li>
             </ul>
-            <p>Para ejercer estos derechos, puede contactarnos en: soporte@bitstk.online</p>
+            <p>Para ejercer estos derechos, puede contactar a: <strong>soporte@bitstk.online</strong></p>
             
             <h3>7. Seguridad</h3>
-            <p>Hemos adoptado medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso no autorizado, la alteración, divulgación o destrucción.</p>
+            <p>BitStk Legal implementa medidas técnicas y organizativas apropiadas para proteger los datos personales contra acceso no autorizado, pérdida, alteración o divulgación.</p>
             
-            <h3>8. Modificaciones</h3>
-            <p>Nos reservamos el derecho de modificar la presente política de privacidad para adaptarla a novedades legislativas o jurisprudenciales.</p>
+            <h3>8. Conservación de Datos</h3>
+            <p>Los datos personales se conservarán durante el tiempo necesario para cumplir con las finalidades descritas y conforme a plazos legales aplicables.</p>
+            
+            <h3>9. Modificaciones</h3>
+            <p>BitStk Legal se reserva el derecho de modificar esta política de privacidad. Las modificaciones serán publicadas en este sitio web.</p>
         </div>
     </div>
 
@@ -875,25 +931,59 @@
             <button class="modal-close" onclick="closeModal('cookies')">&times;</button>
             <h2>Política de Cookies</h2>
             
-            <h3>1. ¿Qué son las cookies?</h3>
-            <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Permiten que el sitio web recuerde sus acciones y preferencias durante un período de tiempo.</p>
+            <h3>1. ¿Qué son las Cookies?</h3>
+            <p>Las cookies son pequeños archivos de texto que se almacenan en el dispositivo del usuario cuando visita un sitio web. Permiten que el sitio recuerde información sobre la visita, preferencias y navegación.</p>
             
-            <h3>2. Cookies utilizadas en este sitio</h3>
-            <p>Este sitio web actualmente no utiliza cookies de seguimiento ni análisis. En caso de implementarse en el futuro, se actualizará esta política y se solicitará su consentimiento cuando sea necesario.</p>
+            <h3>2. Tipos de Cookies Utilizadas</h3>
+            <p>Este sitio web utiliza cookies propias y de terceros con las siguientes finalidades:</p>
             
-            <h3>3. Cookies de terceros</h3>
-            <p>Algunos servicios externos que utilizamos (como Formspree para el formulario de contacto o GitHub Pages para el hosting) pueden establecer sus propias cookies. Le recomendamos revisar las políticas de privacidad de estos servicios:</p>
+            <p><strong>Cookies Técnicas y Funcionales:</strong></p>
             <ul>
-                <li>Formspree: <a href="https://formspree.io/legal/privacy-policy/" target="_blank">https://formspree.io/legal/privacy-policy/</a></li>
-                <li>GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies" target="_blank">https://docs.github.com/en/site-policy/privacy-policies</a></li>
+                <li>Permiten la navegación básica por el sitio</li>
+                <li>Recordar preferencias del usuario</li>
+                <li>Facilitar la funcionalidad de formularios</li>
             </ul>
             
-            <h3>4. Cómo gestionar las cookies</h3>
-            <p>Puede configurar su navegador para aceptar o rechazar cookies. La mayoría de los navegadores aceptan cookies automáticamente, pero puede modificar la configuración para bloquearlas.</p>
-            <p><strong>Nota:</strong> Bloquear todas las cookies puede afectar la funcionalidad de algunos sitios web.</p>
+            <p><strong>Cookies Analíticas:</strong></p>
+            <ul>
+                <li>Analizar el comportamiento de navegación</li>
+                <li>Mejorar la experiencia del usuario</li>
+                <li>Obtener estadísticas de uso del sitio</li>
+            </ul>
             
-            <h3>5. Más información</h3>
-            <p>Para cualquier duda sobre nuestra política de cookies, puede contactarnos en: soporte@bitstk.online</p>
+            <h3>3. Cookies de Terceros</h3>
+            <p>Algunos servicios externos que utilizamos pueden establecer sus propias cookies:</p>
+            <ul>
+                <li><strong>Formspree:</strong> Para gestión de formularios de contacto</li>
+                <li><strong>GitHub Pages:</strong> Para alojamiento del sitio web</li>
+            </ul>
+            <p>Le recomendamos revisar las políticas de privacidad de estos servicios para más información sobre sus prácticas de cookies.</p>
+            
+            <h3>4. Gestión de Cookies</h3>
+            <p>El usuario puede configurar su navegador para:</p>
+            <ul>
+                <li>Aceptar o rechazar todas las cookies</li>
+                <li>Recibir avisos cuando se instale una cookie</li>
+                <li>Eliminar cookies almacenadas</li>
+            </ul>
+            
+            <h3>5. Cómo Gestionar Cookies en Navegadores Principales</h3>
+            <p>Instrucciones básicas para gestionar cookies:</p>
+            <ul>
+                <li><strong>Chrome:</strong> Configuración > Privacidad y seguridad > Cookies</li>
+                <li><strong>Firefox:</strong> Opciones > Privacidad y seguridad > Cookies</li>
+                <li><strong>Safari:</strong> Preferencias > Privacidad > Cookies</li>
+                <li><strong>Edge:</strong> Configuración > Privacidad > Cookies</li>
+            </ul>
+            
+            <h3>6. Consecuencias de Desactivar Cookies</h3>
+            <p>La desactivación de cookies puede afectar la funcionalidad de algunos elementos del sitio web, limitando la experiencia de navegación.</p>
+            
+            <h3>7. Aceptación de Cookies</h3>
+            <p>Al continuar navegando por este sitio, el usuario acepta el uso de cookies conforme a esta política.</p>
+            
+            <h3>8. Más Información</h3>
+            <p>Para cualquier duda sobre nuestra política de cookies, puede contactarnos en: <strong>soporte@bitstk.online</strong></p>
         </div>
     </div>
 
@@ -903,58 +993,90 @@
             <h2>Términos y Condiciones de Uso</h2>
             
             <h3>1. Aceptación de los Términos</h3>
-            <p>Al acceder y utilizar este sitio web, usted acepta quedar vinculado por estos términos y condiciones de uso y por nuestra política de privacidad.</p>
+            <p>El acceso y uso del sitio web de <strong>BitStk Legal</strong> atribuye la condición de usuario e implica la aceptación plena y sin reservas de los presentes términos y condiciones.</p>
+            <p>Si no está de acuerdo con estos términos, le rogamos que no utilice este sitio web.</p>
             
-            <h3>2. Uso del Sitio Web</h3>
-            <p>El usuario se compromete a utilizar el sitio web y sus servicios de conformidad con la ley, el presente Aviso Legal, y las demás condiciones, reglamentos e instrucciones que, en su caso, pudieran ser de aplicación.</p>
-            <p>Queda prohibido el uso del sitio web con fines ilícitos o que perjudiquen o impidan su normal funcionamiento.</p>
+            <h3>2. Objeto y Alcance</h3>
+            <p>Los presentes términos regulan el acceso y uso del sitio web bitstk.online, incluyendo los contenidos, servicios e información disponibles a través del mismo.</p>
             
-            <h3>3. Propiedad Intelectual</h3>
-            <p>Todo el contenido del sitio web, incluyendo pero no limitado a textos, gráficos, logos, iconos, imágenes y software, es propiedad de BitStk Legal o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual.</p>
+            <h3>3. Obligaciones del Usuario</h3>
+            <p>El usuario se compromete a:</p>
+            <ul>
+                <li>Utilizar el sitio de forma lícita y conforme a la legislación vigente</li>
+                <li>Respetar la buena fe, el orden público y las normas de conducta generalmente aceptadas</li>
+                <li>No realizar actividades que puedan dañar, inutilizar o deteriorar el sitio web</li>
+                <li>No introducir programas, virus o cualquier código malicioso</li>
+                <li>Proporcionar información veraz y actualizada en formularios</li>
+            </ul>
             
-            <h3>4. Limitación de Responsabilidad</h3>
-            <p>La información proporcionada en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal específico aplicable a ningún caso particular.</p>
-            <p>BitStk Legal no garantiza la exactitud, completitud o actualidad de la información contenida en el sitio web y no asume responsabilidad por daños derivados del uso de dicha información.</p>
+            <h3>4. Uso Prohibido</h3>
+            <p>Queda expresamente prohibido:</p>
+            <ul>
+                <li>Utilizar el sitio con fines ilícitos o no autorizados</li>
+                <li>Reproducir, copiar o distribuir contenidos sin autorización</li>
+                <li>Realizar ingeniería inversa o intentar acceder a áreas restringidas</li>
+                <li>Usar el sitio de manera que pueda dañar la imagen o reputación de BitStk Legal</li>
+            </ul>
             
-            <h3>5. Enlaces a Terceros</h3>
-            <p>Este sitio web puede contener enlaces a sitios web de terceros. BitStk Legal no controla ni asume responsabilidad por el contenido, políticas de privacidad o prácticas de sitios web de terceros.</p>
+            <h3>5. Propiedad Intelectual e Industrial</h3>
+            <p>Todo el contenido del sitio web, incluyendo pero no limitado a:</p>
+            <ul>
+                <li>Textos, gráficos, logotipos, iconos e imágenes</li>
+                <li>Diseño, estructura y presentación del sitio</li>
+                <li>Código fuente y software</li>
+                <li>Marcas, nombres comerciales y signos distintivos</li>
+            </ul>
+            <p>Es propiedad de BitStk Legal o sus licenciantes y está protegido por leyes de propiedad intelectual e industrial aplicables.</p>
             
-            <h3>6. Modificaciones</h3>
-            <p>BitStk Legal se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor desde su publicación en el sitio web.</p>
+            <h3>6. Limitación de Responsabilidad</h3>
+            <p>BitStk Legal no se responsabiliza por:</p>
+            <ul>
+                <li>Interrupciones, errores o fallos en el acceso al sitio web</li>
+                <li>Virus u otros elementos dañinos introducidos por terceros</li>
+                <li>Daños derivados del uso indebido del sitio</li>
+                <li>Contenidos de sitios web de terceros enlazados</li>
+                <li>Decisiones tomadas basándose únicamente en información del sitio</li>
+            </ul>
             
-            <h3>7. Contacto</h3>
+            <h3>7. Exclusión de Garantías</h3>
+            <p>La información proporcionada en este sitio tiene carácter meramente informativo y no constituye:</p>
+            <ul>
+                <li>Asesoría legal específica aplicable a casos particulares</li>
+                <li>Garantía de resultados en procedimientos legales</li>
+                <li>Promesas o compromisos vinculantes</li>
+            </ul>
+            
+            <h3>8. Enlaces a Terceros</h3>
+            <p>Este sitio web puede contener enlaces a sitios de terceros. BitStk Legal no controla ni asume responsabilidad por el contenido, políticas de privacidad o prácticas de sitios web de terceros.</p>
+            
+            <h3>9. Modificaciones</h3>
+            <p>BitStk Legal se reserva el derecho de:</p>
+            <ul>
+                <li>Modificar estos términos y condiciones en cualquier momento</li>
+                <li>Actualizar, modificar o eliminar contenidos del sitio</li>
+                <li>Suspender temporal o permanentemente el acceso al sitio</li>
+            </ul>
+            <p>Las modificaciones entrarán en vigor desde su publicación en el sitio web.</p>
+            
+            <h3>10. Protección de Datos</h3>
+            <p>El tratamiento de datos personales se regirá por lo dispuesto en nuestra Política de Privacidad, que forma parte integrante de estos términos.</p>
+            
+            <h3>11. Ley Aplicable y Jurisdicción</h3>
+            <p>Estos términos se interpretarán conforme a principios generales del derecho internacional y mercantil aplicable.</p>
+            <p>Para la resolución de cualquier controversia derivada del uso de este sitio web, las partes se someterán a los tribunales y mecanismos de resolución de disputas que resulten competentes conforme a derecho.</p>
+            
+            <h3>12. Contacto</h3>
             <p>Para cualquier consulta sobre estos términos y condiciones, puede contactarnos en:</p>
             <p><strong>Email:</strong> soporte@bitstk.online<br>
             <strong>WhatsApp:</strong> +1 (561) 240-4539</p>
             
-            <h3>8. Ley Aplicable y Jurisdicción</h3>
-            <p>Estos términos se rigen por la legislación aplicable. Para cualquier controversia, las partes se someten a los tribunales competentes del domicilio del usuario.</p>
+            <h3>13. Divisibilidad</h3>
+            <p>Si cualquier disposición de estos términos fuera declarada nula o inaplicable, dicha disposición será sustituida por otra válida que refleje la intención original, permaneciendo el resto de términos en pleno vigor.</p>
         </div>
     </div>
+
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-       
-
-        // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const shapes = document.querySelectorAll('.shape');
-            shapes.forEach((shape, index) => {
-                shape.style.transform = `translateY(${scrolled * (0.3 + index * 0.1)}px)`;
-            });
-        });
-    </script>
-    // Modal functions
+        // Modal functions
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -972,9 +1094,33 @@
                 document.body.style.overflow = 'auto';
             }
         }
-</body>
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && !this.hasAttribute('onclick')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
 
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                shape.style.transform = `translateY(${scrolled * (0.3 + index * 0.1)}px)`;
+            });
+        });
+    </script>
+</body>
 </html>
+
 
 
 
