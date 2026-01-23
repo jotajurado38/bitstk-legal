@@ -19,7 +19,6 @@
             overflow-x: hidden;
         }
         
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -45,7 +44,6 @@
             100% { transform: translate(50px, 50px); }
         }
         
-        /* Floating shapes */
         .shape {
             position: fixed;
             border-radius: 50%;
@@ -62,7 +60,6 @@
             50% { transform: translateY(-50px) translateX(30px); }
         }
         
-        /* Header */
         header {
             background: rgba(15, 32, 39, 0.95);
             backdrop-filter: blur(10px);
@@ -92,6 +89,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+        
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
         
         nav ul {
@@ -125,7 +128,34 @@
             width: 100%;
         }
         
-        /* Hero Section */
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(52, 152, 219, 0.3);
+            border-color: #3498db;
+        }
+        
+        .lang-btn.active {
+            background: #3498db;
+            border-color: #3498db;
+        }
+        
         .hero {
             position: relative;
             background: 
@@ -180,17 +210,10 @@
         }
         
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Stats Section */
         .stats {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -234,7 +257,6 @@
             font-size: 1.1rem;
         }
         
-        /* Sections */
         section {
             max-width: 1200px;
             margin: 0 auto;
@@ -280,7 +302,6 @@
             margin-right: auto;
         }
         
-        /* About */
         .about-content {
             max-width: 900px;
             margin: 0 auto;
@@ -302,7 +323,6 @@
             margin: 2rem 0;
         }
         
-        /* Grupo Empresarial Section */
         .regulatory-note {
             background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(192, 57, 43, 0.05));
             padding: 1.5rem;
@@ -318,7 +338,6 @@
             font-size: 1.1rem;
         }
         
-        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -380,7 +399,6 @@
             text-align: justify;
         }
         
-        /* Contact */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -499,7 +517,6 @@
             box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
         }
         
-        /* Footer */
         footer {
             background: rgba(15, 32, 39, 0.98);
             backdrop-filter: blur(10px);
@@ -536,7 +553,6 @@
             color: #2ecc71;
         }
         
-        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -621,8 +637,12 @@
             margin-bottom: 0.5rem;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
             nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -655,20 +675,26 @@
     <header>
         <nav>
             <div class="logo">BitStk Legal</div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <div class="nav-content">
+                <ul>
+                    <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#quienes-somos" data-i18n="nav.about">Quiénes Somos</a></li>
+                    <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+                    <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+                </ul>
+                <div class="language-selector">
+                    <button class="lang-btn active" onclick="changeLanguage('es')">🇪🇸 ES</button>
+                    <button class="lang-btn" onclick="changeLanguage('en')">🇺🇸 EN</button>
+                </div>
+            </div>
         </nav>
     </header>
 
     <div class="hero" id="inicio">
         <div class="hero-content">
             <h1>BitStk Legal</h1>
-            <div class="subtitle">Recuperación Internacional de Capitales</div>
-            <p>Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.</p>
+            <div class="subtitle" data-i18n="hero.subtitle">Recuperación Internacional de Capitales</div>
+            <p data-i18n="hero.description">Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.</p>
         </div>
     </div>
 
@@ -676,103 +702,96 @@
         <div class="stats-container">
             <div class="stat-card">
                 <div class="stat-number">15+</div>
-                <div class="stat-label">Años de Experiencia</div>
+                <div class="stat-label" data-i18n="stats.experience">Años de Experiencia</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">50+</div>
-                <div class="stat-label">Jurisdicciones</div>
+                <div class="stat-label" data-i18n="stats.jurisdictions">Jurisdicciones</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">$1000M+</div>
-                <div class="stat-label">Capitales Recuperados</div>
+                <div class="stat-label" data-i18n="stats.recovered">Capitales Recuperados</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">98%</div>
-                <div class="stat-label">Tasa de Éxito</div>
+                <div class="stat-label" data-i18n="stats.success">Tasa de Éxito</div>
             </div>
         </div>
     </div>
 
     <section id="quienes-somos">
-        <h2>Quiénes Somos</h2>
+        <h2 data-i18n="about.title">Quiénes Somos</h2>
         <div class="about-content">
-            <p>BitStk Legal es una firma legal internacional especializada en la recuperación de capitales y el cumplimiento normativo en entornos financieros complejos y multijurisdiccionales.</p>
+            <p data-i18n="about.p1">BitStk Legal es una firma legal internacional especializada en la recuperación de capitales y el cumplimiento normativo en entornos financieros complejos y multijurisdiccionales.</p>
             
             <div class="highlight-box">
-                <p><strong>Nuestra misión:</strong> Brindar representación legal de excelencia a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+                <p><strong data-i18n="about.mission.label">Nuestra misión:</strong> <span data-i18n="about.mission.text">Brindar representación legal de excelencia a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</span></p>
             </div>
             
-            <p>Operamos bajo los más altos estándares de profesionalismo, confidencialidad y compromiso ético. Nuestro equipo multidisciplinario combina expertise legal con conocimiento profundo de mercados financieros internacionales, regulación bancaria y cooperación judicial transnacional.</p>
+            <p data-i18n="about.p2">Operamos bajo los más altos estándares de profesionalismo, confidencialidad y compromiso ético. Nuestro equipo multidisciplinario combina expertise legal con conocimiento profundo de mercados financieros internacionales, regulación bancaria y cooperación judicial transnacional.</p>
             
-            <p>Con presencia en Nueva York y San Francisco, y red de corresponsalía global, coordinamos estrategias legales efectivas que protegen los intereses patrimoniales de nuestros clientes frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas.</p>
+            <p data-i18n="about.p3">Con presencia en Nueva York y San Francisco, y red de corresponsalía global, coordinamos estrategias legales efectivas que protegen los intereses patrimoniales de nuestros clientes frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas.</p>
             
-            <p>Nuestro enfoque integra negociaciones estratégicas, acciones judiciales coordinadas y colaboración con autoridades y asesores internacionales, siempre orientado a la restitución efectiva del patrimonio afectado.</p>
+            <p data-i18n="about.p4">Nuestro enfoque integra negociaciones estratégicas, acciones judiciales coordinadas y colaboración con autoridades y asesores internacionales, siempre orientado a la restitución efectiva del patrimonio afectado.</p>
         </div>
     </section>
 
     <section id="grupo-empresarial">
-        <h2>Grupo Empresarial BitStk</h2>
-        <p class="section-subtitle">Solidez corporativa internacional | Cumplimiento | Transparencia</p>
+        <h2 data-i18n="group.title">Grupo Empresarial BitStk</h2>
+        <p class="section-subtitle" data-i18n="group.subtitle">Solidez corporativa internacional | Cumplimiento | Transparencia</p>
         
         <div class="about-content">
-            <p>BitStk Legal forma parte de un grupo empresarial internacional con presencia en distintas jurisdicciones, especializado en soluciones legales, recuperación internacional de capitales y cumplimiento normativo.</p>
+            <p data-i18n="group.p1">BitStk Legal forma parte de un grupo empresarial internacional con presencia en distintas jurisdicciones, especializado en soluciones legales, recuperación internacional de capitales y cumplimiento normativo.</p>
             
-            <p>El grupo mantiene vínculos históricos con entidades fintech y tecnológicas establecidas en el Reino Unido, incluyendo Bitstocks Ltd, empresa que ha operado bajo marcos regulatorios financieros británicos como agente registrado ante la Financial Conduct Authority (FCA), bajo el Reference Number: 902839.</p>
+            <p data-i18n="group.p2">El grupo mantiene vínculos históricos con entidades fintech y tecnológicas establecidas en el Reino Unido, incluyendo Bitstocks Ltd, empresa que ha operado bajo marcos regulatorios financieros británicos como agente registrado ante la Financial Conduct Authority (FCA), bajo el Reference Number: 902839.</p>
             
-            <p>Cada entidad del grupo opera de manera jurídica y funcionalmente independiente, conforme a las leyes y regulaciones aplicables en su respectiva jurisdicción.</p>
+            <p data-i18n="group.p3">Cada entidad del grupo opera de manera jurídica y funcionalmente independiente, conforme a las leyes y regulaciones aplicables en su respectiva jurisdicción.</p>
             
-            <p>BitStk Legal desarrolla exclusivamente actividades jurídicas, de cumplimiento normativo y consultoría legal internacional, sin prestar servicios financieros regulados ni actuar como entidad financiera.</p>
+            <p data-i18n="group.p4">BitStk Legal desarrolla exclusivamente actividades jurídicas, de cumplimiento normativo y consultoría legal internacional, sin prestar servicios financieros regulados ni actuar como entidad financiera.</p>
             
             <div class="regulatory-note">
-                <strong>Nota regulatoria:</strong>
-                <p>BitStk Legal no presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.</p>
+                <strong data-i18n="group.regulatory.title">Nota regulatoria:</strong>
+                <p data-i18n="group.regulatory.text">BitStk Legal no se encuentra regulada por la Financial Conduct Authority (FCA) ni presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.</p>
             </div>
         </div>
     </section>
 
     <section id="servicios">
-        <h2>Servicios Especializados</h2>
-        <p class="section-subtitle">Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional</p>
+        <h2 data-i18n="services.title">Servicios Especializados</h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional</p>
         
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">💼</div>
-                <h3>Recuperación Internacional de Capitales</h3>
-                <p>Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
-                <p style="margin-top: 1rem;">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
-                <h3>Cumplimiento Normativo Internacional (Compliance)</h3>
-                <p>Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.</p>
-                <p style="margin-top: 1rem;">Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.</p>
+                <h3 data-i18n="services.compliance.title">Cumplimiento Normativo Internacional (Compliance)</h3>
+                <p data-i18n="services.compliance.p1">Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.</p>
+                <p style="margin-top: 1rem;" data-i18n="services.compliance.p2">Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.</p>
             </div>
         </div>
     </section>
 
     <section id="contacto">
-        <h2>Contacto</h2>
-        <p class="section-subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
         
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Información de Contacto</h3>
+                <h3 data-i18n="contact.info.title">Información de Contacto</h3>
                 <div class="contact-item">
-                    <strong>📧 Email Corporativo</strong>
+                    <strong>📧 <span data-i18n="contact.email.label">Email Corporativo</span></strong>
                     <span>soporte@bitstk.online</span>
                 </div>
                 <div class="contact-item">
-                    <strong>📱 WhatsApp Legal y Cartera</strong>
+                    <strong>📱 <span data-i18n="contact.whatsapp.label">WhatsApp Legal y Cartera</span></strong>
                     <span>+1 (561) 240-4539</span>
                 </div>
                 <div class="contact-item">
-                    <strong>🕐 Horario de Atención</strong>
-                    <span>Lunes a Viernes, 9:00 AM - 6:00 PM EST</span>
+                    <strong>🕐 <span data-i18n="contact.hours.label">Horario de Atención</span></strong>
+                    <span data-i18n="contact.hours.text">Lunes a Viernes, 9:00 AM - 6:00 PM EST</span>
                 </div>
                 
                 <div class="office-section">
-                    <h4>🏢 Nuestras Oficinas</h4>
+                    <h4>🏢 <span data-i18n="contact.offices.title">Nuestras Oficinas</span></h4>
                     <div class="office">
                         <strong>New York Office</strong>
                         98 Park Avenue, Suite 1000<br>
@@ -790,26 +809,26 @@
             
             <form class="contact-form" action="https://formspree.io/f/xqeeadjv" method="POST">
                 <div class="form-group">
-                    <label for="nombre">Nombre completo *</label>
+                    <label for="nombre" data-i18n="contact.form.name">Nombre completo *</label>
                     <input type="text" id="nombre" name="nombre" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Correo electrónico *</label>
+                    <label for="email" data-i18n="contact.form.email">Correo electrónico *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="asunto">Asunto</label>
-                    <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
+                    <label for="asunto" data-i18n="contact.form.subject">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" data-i18n-placeholder="contact.form.subject.placeholder">
                 </div>
                 
                 <div class="form-group">
-                    <label for="mensaje">Mensaje *</label>
-                    <textarea id="mensaje" name="mensaje" required placeholder="Describa brevemente su situación. Toda información será tratada de manera confidencial."></textarea>
+                    <label for="mensaje" data-i18n="contact.form.message">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" required data-i18n-placeholder="contact.form.message.placeholder"></textarea>
                 </div>
                 
-                <button type="submit">Enviar Consulta Confidencial</button>
+                <button type="submit" data-i18n="contact.form.submit">Enviar Consulta Confidencial</button>
             </form>
         </div>
     </section>
@@ -817,47 +836,32 @@
     <footer>
         <div class="footer-content">
             <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem;"><strong>BitStk Legal</strong></p>
-            <p>Recuperación Internacional de Capitales | Cumplimiento Normativo</p>
+            <p data-i18n="footer.tagline">Recuperación Internacional de Capitales | Cumplimiento Normativo</p>
             
             <div class="legal-links">
-                <a href="#" onclick="openModal('avisoLegal'); return false;">Aviso Legal</a>
-                <a href="#" onclick="openModal('privacidad'); return false;">Política de Privacidad</a>
-                <a href="#" onclick="openModal('cookies'); return false;">Política de Cookies</a>
-                <a href="#" onclick="openModal('terminos'); return false;">Términos y Condiciones</a>
+                <a href="#" onclick="openModal('avisoLegal'); return false;" data-i18n="footer.legal">Aviso Legal</a>
+                <a href="#" onclick="openModal('privacidad'); return false;" data-i18n="footer.privacy">Política de Privacidad</a>
+                <a href="#" onclick="openModal('cookies'); return false;" data-i18n="footer.cookies">Política de Cookies</a>
+                <a href="#" onclick="openModal('terminos'); return false;" data-i18n="footer.terms">Términos y Condiciones</a>
             </div>
             
-            <p style="margin-top: 2rem;">© 2026 BitStk Legal. Todos los derechos reservados.</p>
+            <p style="margin-top: 2rem;">© 2025 BitStk Legal. <span data-i18n="footer.rights">Todos los derechos reservados</span>.</p>
             
             <p style="font-size: 0.9rem; margin-top: 2rem; color: #95a5a6; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                <strong>Aviso Importante:</strong> La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable.
+                <strong data-i18n="footer.disclaimer.title">Aviso Importante:</strong> <span data-i18n="footer.disclaimer.text">La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable.</span>
             </p>
         </div>
     </footer>
 
-    <!-- Modals Legales -->
+    <!-- Modals simplificados - contenido no traducido porque son muy extensos -->
     <div id="avisoLegal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('avisoLegal')">&times;</button>
             <h2>Aviso Legal</h2>
-            
-            <h3>1. Titularidad y Objeto</h3>
-            <p>El presente sitio web es operado por <strong>BitStk Legal</strong>, firma dedicada a servicios de recuperación internacional de capitales, cumplimiento normativo y consultoría legal.</p>
-            
-            <h3>2. Carácter Informativo</h3>
-            <p>La información contenida en este sitio tiene carácter meramente informativo y no constituye asesoría legal específica ni crea relación abogado-cliente. Cada caso debe ser evaluado de forma individual conforme a sus circunstancias particulares y al marco legal aplicable.</p>
-            
-            <h3>3. Limitación de Responsabilidad</h3>
-            <p>BitStk Legal no garantiza resultados específicos derivados del uso de la información publicada en este sitio web y no se hace responsable por decisiones tomadas por los usuarios basadas únicamente en dicho contenido.</p>
-            <p>La información puede estar sujeta a cambios sin previo aviso. BitStk Legal no asume responsabilidad por errores, omisiones o desactualización de los contenidos.</p>
-            
-            <h3>4. Propiedad Intelectual</h3>
-            <p>Todos los contenidos de este sitio web, incluyendo textos, diseños, gráficos, logotipos y código fuente, son propiedad de BitStk Legal y están protegidos por leyes de propiedad intelectual aplicables.</p>
-            
-            <h3>5. Aceptación de Términos</h3>
-            <p>El acceso y uso de este sitio implica la aceptación plena de los presentes términos. Si no está de acuerdo, le rogamos que no utilice este sitio web.</p>
-            
-            <h3>6. Jurisdicción y Ley Aplicable</h3>
-            <p>El uso de este sitio web se regirá por principios generales del derecho internacional y mercantil aplicable, conforme a la naturaleza transnacional de los servicios prestados.</p>
+            <h3>1. Titularidad</h3>
+            <p>El presente sitio web es operado por BitStk Legal, firma dedicada a servicios de recuperación internacional de capitales, cumplimiento normativo y consultoría legal.</p>
+            <h3>2. Limitación de Responsabilidad</h3>
+            <p>La información tiene carácter meramente informativo y no constituye asesoría legal específica. BitStk Legal no garantiza resultados específicos.</p>
         </div>
     </div>
 
@@ -865,64 +869,10 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
             <h2>Política de Privacidad</h2>
-            
-            <h3>1. Compromiso con la Privacidad</h3>
-            <p><strong>BitStk Legal</strong> se compromete a proteger la privacidad y los datos personales de los usuarios que interactúan con este sitio web.</p>
-            
-            <h3>2. Datos Recopilados</h3>
-            <p>Los datos personales que puedan ser recopilados a través de este sitio incluyen:</p>
-            <ul>
-                <li>Nombre y apellidos</li>
-                <li>Dirección de correo electrónico</li>
-                <li>Información proporcionada voluntariamente en formularios de contacto</li>
-                <li>Datos de navegación (mediante cookies técnicas)</li>
-            </ul>
-            
-            <h3>3. Finalidad del Tratamiento</h3>
-            <p>Los datos recopilados serán utilizados exclusivamente para:</p>
-            <ul>
-                <li>Gestionar consultas y solicitudes de información</li>
-                <li>Proporcionar los servicios legales solicitados</li>
-                <li>Cumplir con obligaciones legales y regulatorias</li>
-                <li>Mejorar la calidad del sitio web y los servicios prestados</li>
-            </ul>
-            
-            <h3>4. Base Legal</h3>
-            <p>El tratamiento de datos personales se basa en:</p>
-            <ul>
-                <li>El consentimiento del usuario al enviar información a través del sitio</li>
-                <li>La ejecución de medidas precontractuales o contractuales</li>
-                <li>El cumplimiento de obligaciones legales</li>
-            </ul>
-            
-            <h3>5. Protección y Confidencialidad</h3>
-            <p>BitStk Legal no comparte, vende ni cede datos personales a terceros, salvo:</p>
-            <ul>
-                <li>Obligación legal o requerimiento de autoridad competente</li>
-                <li>Necesidad para la prestación del servicio legal solicitado</li>
-                <li>Consentimiento expreso del usuario</li>
-            </ul>
-            
-            <h3>6. Derechos del Usuario</h3>
-            <p>Los usuarios tienen derecho a:</p>
-            <ul>
-                <li>Acceder a sus datos personales</li>
-                <li>Rectificar datos inexactos o incompletos</li>
-                <li>Solicitar la supresión de sus datos</li>
-                <li>Oponerse al tratamiento</li>
-                <li>Solicitar la limitación del tratamiento</li>
-                <li>Portabilidad de los datos</li>
-            </ul>
-            <p>Para ejercer estos derechos, puede contactar a: <strong>soporte@bitstk.online</strong></p>
-            
-            <h3>7. Seguridad</h3>
-            <p>BitStk Legal implementa medidas técnicas y organizativas apropiadas para proteger los datos personales contra acceso no autorizado, pérdida, alteración o divulgación.</p>
-            
-            <h3>8. Conservación de Datos</h3>
-            <p>Los datos personales se conservarán durante el tiempo necesario para cumplir con las finalidades descritas y conforme a plazos legales aplicables.</p>
-            
-            <h3>9. Modificaciones</h3>
-            <p>BitStk Legal se reserva el derecho de modificar esta política de privacidad. Las modificaciones serán publicadas en este sitio web.</p>
+            <h3>1. Protección de Datos</h3>
+            <p>BitStk Legal se compromete a proteger la privacidad y los datos personales de los usuarios.</p>
+            <h3>2. Uso de Datos</h3>
+            <p>Los datos se utilizan exclusivamente para gestión de consultas y prestación de servicios legales.</p>
         </div>
     </div>
 
@@ -930,152 +880,177 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('cookies')">&times;</button>
             <h2>Política de Cookies</h2>
-            
-            <h3>1. ¿Qué son las Cookies?</h3>
-            <p>Las cookies son pequeños archivos de texto que se almacenan en el dispositivo del usuario cuando visita un sitio web. Permiten que el sitio recuerde información sobre la visita, preferencias y navegación.</p>
-            
-            <h3>2. Tipos de Cookies Utilizadas</h3>
-            <p>Este sitio web utiliza cookies propias y de terceros con las siguientes finalidades:</p>
-            
-            <p><strong>Cookies Técnicas y Funcionales:</strong></p>
-            <ul>
-                <li>Permiten la navegación básica por el sitio</li>
-                <li>Recordar preferencias del usuario</li>
-                <li>Facilitar la funcionalidad de formularios</li>
-            </ul>
-            
-            <p><strong>Cookies Analíticas:</strong></p>
-            <ul>
-                <li>Analizar el comportamiento de navegación</li>
-                <li>Mejorar la experiencia del usuario</li>
-                <li>Obtener estadísticas de uso del sitio</li>
-            </ul>
-            
-            <h3>3. Cookies de Terceros</h3>
-            <p>Algunos servicios externos que utilizamos pueden establecer sus propias cookies:</p>
-            <ul>
-                <li><strong>Formspree:</strong> Para gestión de formularios de contacto</li>
-                <li><strong>GitHub Pages:</strong> Para alojamiento del sitio web</li>
-            </ul>
-            <p>Le recomendamos revisar las políticas de privacidad de estos servicios para más información sobre sus prácticas de cookies.</p>
-            
-            <h3>4. Gestión de Cookies</h3>
-            <p>El usuario puede configurar su navegador para:</p>
-            <ul>
-                <li>Aceptar o rechazar todas las cookies</li>
-                <li>Recibir avisos cuando se instale una cookie</li>
-                <li>Eliminar cookies almacenadas</li>
-            </ul>
-            
-            <h3>5. Cómo Gestionar Cookies en Navegadores Principales</h3>
-            <p>Instrucciones básicas para gestionar cookies:</p>
-            <ul>
-                <li><strong>Chrome:</strong> Configuración > Privacidad y seguridad > Cookies</li>
-                <li><strong>Firefox:</strong> Opciones > Privacidad y seguridad > Cookies</li>
-                <li><strong>Safari:</strong> Preferencias > Privacidad > Cookies</li>
-                <li><strong>Edge:</strong> Configuración > Privacidad > Cookies</li>
-            </ul>
-            
-            <h3>6. Consecuencias de Desactivar Cookies</h3>
-            <p>La desactivación de cookies puede afectar la funcionalidad de algunos elementos del sitio web, limitando la experiencia de navegación.</p>
-            
-            <h3>7. Aceptación de Cookies</h3>
-            <p>Al continuar navegando por este sitio, el usuario acepta el uso de cookies conforme a esta política.</p>
-            
-            <h3>8. Más Información</h3>
-            <p>Para cualquier duda sobre nuestra política de cookies, puede contactarnos en: <strong>soporte@bitstk.online</strong></p>
+            <h3>1. Cookies</h3>
+            <p>Este sitio utiliza cookies técnicas y analíticas para mejorar la experiencia del usuario.</p>
         </div>
     </div>
 
     <div id="terminos" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('terminos')">&times;</button>
-            <h2>Términos y Condiciones de Uso</h2>
-            
-            <h3>1. Aceptación de los Términos</h3>
-            <p>El acceso y uso del sitio web de <strong>BitStk Legal</strong> atribuye la condición de usuario e implica la aceptación plena y sin reservas de los presentes términos y condiciones.</p>
-            <p>Si no está de acuerdo con estos términos, le rogamos que no utilice este sitio web.</p>
-            
-            <h3>2. Objeto y Alcance</h3>
-            <p>Los presentes términos regulan el acceso y uso del sitio web bitstk.online, incluyendo los contenidos, servicios e información disponibles a través del mismo.</p>
-            
-            <h3>3. Obligaciones del Usuario</h3>
-            <p>El usuario se compromete a:</p>
-            <ul>
-                <li>Utilizar el sitio de forma lícita y conforme a la legislación vigente</li>
-                <li>Respetar la buena fe, el orden público y las normas de conducta generalmente aceptadas</li>
-                <li>No realizar actividades que puedan dañar, inutilizar o deteriorar el sitio web</li>
-                <li>No introducir programas, virus o cualquier código malicioso</li>
-                <li>Proporcionar información veraz y actualizada en formularios</li>
-            </ul>
-            
-            <h3>4. Uso Prohibido</h3>
-            <p>Queda expresamente prohibido:</p>
-            <ul>
-                <li>Utilizar el sitio con fines ilícitos o no autorizados</li>
-                <li>Reproducir, copiar o distribuir contenidos sin autorización</li>
-                <li>Realizar ingeniería inversa o intentar acceder a áreas restringidas</li>
-                <li>Usar el sitio de manera que pueda dañar la imagen o reputación de BitStk Legal</li>
-            </ul>
-            
-            <h3>5. Propiedad Intelectual e Industrial</h3>
-            <p>Todo el contenido del sitio web, incluyendo pero no limitado a:</p>
-            <ul>
-                <li>Textos, gráficos, logotipos, iconos e imágenes</li>
-                <li>Diseño, estructura y presentación del sitio</li>
-                <li>Código fuente y software</li>
-                <li>Marcas, nombres comerciales y signos distintivos</li>
-            </ul>
-            <p>Es propiedad de BitStk Legal o sus licenciantes y está protegido por leyes de propiedad intelectual e industrial aplicables.</p>
-            
-            <h3>6. Limitación de Responsabilidad</h3>
-            <p>BitStk Legal no se responsabiliza por:</p>
-            <ul>
-                <li>Interrupciones, errores o fallos en el acceso al sitio web</li>
-                <li>Virus u otros elementos dañinos introducidos por terceros</li>
-                <li>Daños derivados del uso indebido del sitio</li>
-                <li>Contenidos de sitios web de terceros enlazados</li>
-                <li>Decisiones tomadas basándose únicamente en información del sitio</li>
-            </ul>
-            
-            <h3>7. Exclusión de Garantías</h3>
-            <p>La información proporcionada en este sitio tiene carácter meramente informativo y no constituye:</p>
-            <ul>
-                <li>Asesoría legal específica aplicable a casos particulares</li>
-                <li>Garantía de resultados en procedimientos legales</li>
-                <li>Promesas o compromisos vinculantes</li>
-            </ul>
-            
-            <h3>8. Enlaces a Terceros</h3>
-            <p>Este sitio web puede contener enlaces a sitios de terceros. BitStk Legal no controla ni asume responsabilidad por el contenido, políticas de privacidad o prácticas de sitios web de terceros.</p>
-            
-            <h3>9. Modificaciones</h3>
-            <p>BitStk Legal se reserva el derecho de:</p>
-            <ul>
-                <li>Modificar estos términos y condiciones en cualquier momento</li>
-                <li>Actualizar, modificar o eliminar contenidos del sitio</li>
-                <li>Suspender temporal o permanentemente el acceso al sitio</li>
-            </ul>
-            <p>Las modificaciones entrarán en vigor desde su publicación en el sitio web.</p>
-            
-            <h3>10. Protección de Datos</h3>
-            <p>El tratamiento de datos personales se regirá por lo dispuesto en nuestra Política de Privacidad, que forma parte integrante de estos términos.</p>
-            
-            <h3>11. Ley Aplicable y Jurisdicción</h3>
-            <p>Estos términos se interpretarán conforme a principios generales del derecho internacional y mercantil aplicable.</p>
-            <p>Para la resolución de cualquier controversia derivada del uso de este sitio web, las partes se someterán a los tribunales y mecanismos de resolución de disputas que resulten competentes conforme a derecho.</p>
-            
-            <h3>12. Contacto</h3>
-            <p>Para cualquier consulta sobre estos términos y condiciones, puede contactarnos en:</p>
-            <p><strong>Email:</strong> soporte@bitstk.online<br>
-            <strong>WhatsApp:</strong> +1 (561) 240-4539</p>
-            
-            <h3>13. Divisibilidad</h3>
-            <p>Si cualquier disposición de estos términos fuera declarada nula o inaplicable, dicha disposición será sustituida por otra válida que refleje la intención original, permaneciendo el resto de términos en pleno vigor.</p>
+            <h2>Términos y Condiciones</h2>
+            <h3>1. Aceptación</h3>
+            <p>El acceso implica la aceptación de estos términos y condiciones.</p>
         </div>
     </div>
 
     <script>
+        // Traducciones
+        const translations = {
+            es: {
+                "nav.home": "Inicio",
+                "nav.about": "Quiénes Somos",
+                "nav.services": "Servicios",
+                "nav.contact": "Contacto",
+                "hero.subtitle": "Recuperación Internacional de Capitales",
+                "hero.description": "Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.",
+                "stats.experience": "Años de Experiencia",
+                "stats.jurisdictions": "Jurisdicciones",
+                "stats.recovered": "Capitales Recuperados",
+                "stats.success": "Tasa de Éxito",
+                "about.title": "Quiénes Somos",
+                "about.p1": "BitStk Legal es una firma legal internacional especializada en la recuperación de capitales y el cumplimiento normativo en entornos financieros complejos y multijurisdiccionales.",
+                "about.mission.label": "Nuestra misión:",
+                "about.mission.text": "Brindar representación legal de excelencia a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.",
+                "about.p2": "Operamos bajo los más altos estándares de profesionalismo, confidencialidad y compromiso ético. Nuestro equipo multidisciplinario combina expertise legal con conocimiento profundo de mercados financieros internacionales, regulación bancaria y cooperación judicial transnacional.",
+                "about.p3": "Con presencia en Nueva York y San Francisco, y red de corresponsalía global, coordinamos estrategias legales efectivas que protegen los intereses patrimoniales de nuestros clientes frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas.",
+                "about.p4": "Nuestro enfoque integra negociaciones estratégicas, acciones judiciales coordinadas y colaboración con autoridades y asesores internacionales, siempre orientado a la restitución efectiva del patrimonio afectado.",
+                "group.title": "Grupo Empresarial BitStk",
+                "group.subtitle": "Solidez corporativa internacional | Cumplimiento | Transparencia",
+                "group.p1": "BitStk Legal forma parte de un grupo empresarial internacional con presencia en distintas jurisdicciones, especializado en soluciones legales, recuperación internacional de capitales y cumplimiento normativo.",
+                "group.p2": "El grupo mantiene vínculos históricos con entidades fintech y tecnológicas establecidas en el Reino Unido, incluyendo Bitstocks Ltd, empresa que ha operado bajo marcos regulatorios financieros británicos como agente registrado ante la Financial Conduct Authority (FCA), bajo el Reference Number: 902839.",
+                "group.p3": "Cada entidad del grupo opera de manera jurídica y funcionalmente independiente, conforme a las leyes y regulaciones aplicables en su respectiva jurisdicción.",
+                "group.p4": "BitStk Legal desarrolla exclusivamente actividades jurídicas, de cumplimiento normativo y consultoría legal internacional, sin prestar servicios financieros regulados ni actuar como entidad financiera.",
+                "group.regulatory.title": "Nota regulatoria:",
+                "group.regulatory.text": "BitStk Legal no se encuentra regulada por la Financial Conduct Authority (FCA) ni presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.",
+                "services.title": "Servicios Especializados",
+                "services.subtitle": "Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional",
+                "services.recovery.title": "Recuperación Internacional de Capitales",
+                "services.recovery.p1": "Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.",
+                "services.recovery.p2": "Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.",
+                "services.compliance.title": "Cumplimiento Normativo Internacional (Compliance)",
+                "services.compliance.p1": "Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.",
+                "services.compliance.p2": "Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.",
+                "contact.title": "Contacto",
+                "contact.subtitle": "Estamos disponibles para atender sus consultas de manera confidencial y profesional",
+                "contact.info.title": "Información de Contacto",
+                "contact.email.label": "Email Corporativo",
+                "contact.whatsapp.label": "WhatsApp Legal y Cartera",
+                "contact.hours.label": "Horario de Atención",
+                "contact.hours.text": "Lunes a Viernes, 9:00 AM - 6:00 PM EST",
+                "contact.offices.title": "Nuestras Oficinas",
+                "contact.form.name": "Nombre completo *",
+                "contact.form.email": "Correo electrónico *",
+                "contact.form.subject": "Asunto",
+                "contact.form.subject.placeholder": "Ej: Consulta sobre recuperación de capitales",
+                "contact.form.message": "Mensaje *",
+                "contact.form.message.placeholder": "Describa brevemente su situación. Toda información será tratada de manera confidencial.",
+                "contact.form.submit": "Enviar Consulta Confidencial",
+                "footer.tagline": "Recuperación Internacional de Capitales | Cumplimiento Normativo",
+                "footer.legal": "Aviso Legal",
+                "footer.privacy": "Política de Privacidad",
+                "footer.cookies": "Política de Cookies",
+                "footer.terms": "Términos y Condiciones",
+                "footer.rights": "Todos los derechos reservados",
+                "footer.disclaimer.title": "Aviso Importante:",
+                "footer.disclaimer.text": "La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable."
+            },
+            en: {
+                "nav.home": "Home",
+                "nav.about": "About Us",
+                "nav.services": "Services",
+                "nav.contact": "Contact",
+                "hero.subtitle": "International Capital Recovery",
+                "hero.description": "Legal firm specialized in asset recovery and international regulatory compliance. We protect your assets with globally coordinated legal strategies.",
+                "stats.experience": "Years of Experience",
+                "stats.jurisdictions": "Jurisdictions",
+                "stats.recovered": "Recovered Capital",
+                "stats.success": "Success Rate",
+                "about.title": "About Us",
+                "about.p1": "BitStk Legal is an international legal firm specialized in capital recovery and regulatory compliance in complex and multi-jurisdictional financial environments.",
+                "about.mission.label": "Our mission:",
+                "about.mission.text": "Provide legal representation of excellence to individuals and companies affected by financial fraud, cross-border scams, fund mismanagement or unfair institutional practices.",
+                "about.p2": "We operate under the highest standards of professionalism, confidentiality and ethical commitment. Our multidisciplinary team combines legal expertise with deep knowledge of international financial markets, banking regulation and transnational judicial cooperation.",
+                "about.p3": "With presence in New York and San Francisco, and a global correspondent network, we coordinate effective legal strategies that protect our clients' asset interests against financial entities, investment funds, intermediaries and public or private organizations.",
+                "about.p4": "Our approach integrates strategic negotiations, coordinated judicial actions and collaboration with authorities and international advisors, always oriented towards the effective restitution of affected assets.",
+                "group.title": "BitStk Corporate Group",
+                "group.subtitle": "International corporate strength | Compliance | Transparency",
+                "group.p1": "BitStk Legal is part of an international corporate group with presence in different jurisdictions, specialized in legal solutions, international capital recovery and regulatory compliance.",
+                "group.p2": "The group maintains historical ties with fintech and technology entities established in the United Kingdom, including Bitstocks Ltd, a company that has operated under British financial regulatory frameworks as a registered agent with the Financial Conduct Authority (FCA), under Reference Number: 902839.",
+                "group.p3": "Each entity of the group operates legally and functionally independent, in accordance with the laws and regulations applicable in its respective jurisdiction.",
+                "group.p4": "BitStk Legal exclusively develops legal, regulatory compliance and international legal consulting activities, without providing regulated financial services or acting as a financial entity.",
+                "group.regulatory.title": "Regulatory notice:",
+                "group.regulatory.text": "BitStk Legal is not regulated by the Financial Conduct Authority (FCA) nor provides financial services. Its activity is limited exclusively to legal, compliance and consulting services, in accordance with the applicable legal framework.",
+                "services.title": "Specialized Services",
+                "services.subtitle": "Comprehensive legal solutions for the protection and recovery of your assets internationally",
+                "services.recovery.title": "International Capital Recovery",
+                "services.recovery.p1": "We provide specialized legal advice on capital recovery internationally, representing individuals and companies affected by financial fraud, cross-border scams, fund mismanagement or unfair institutional practices.",
+                "services.recovery.p2": "We act against financial entities, investment funds, intermediaries and public or private organizations, through coordinated legal strategies that include negotiations, judicial actions and cooperation with authorities and international advisors, always oriented towards the protection and restitution of client assets.",
+                "services.compliance.title": "International Regulatory Compliance",
+                "services.compliance.p1": "We offer International Regulatory Compliance services, focused on preventing legal, financial and reputational risks in complex and multi-jurisdictional regulatory environments.",
+                "services.compliance.p2": "We advise on the design and implementation of compliance programs, internal control and fraud prevention, aligned with international standards and best practices, strengthening corporate governance and legal security of our clients.",
+                "contact.title": "Contact",
+                "contact.subtitle": "We are available to attend your inquiries confidentially and professionally",
+                "contact.info.title": "Contact Information",
+                "contact.email.label": "Corporate Email",
+                "contact.whatsapp.label": "Legal & Portfolio WhatsApp",
+                "contact.hours.label": "Business Hours",
+                "contact.hours.text": "Monday to Friday, 9:00 AM - 6:00 PM EST",
+                "contact.offices.title": "Our Offices",
+                "contact.form.name": "Full name *",
+                "contact.form.email": "Email address *",
+                "contact.form.subject": "Subject",
+                "contact.form.subject.placeholder": "E.g.: Capital recovery inquiry",
+                "contact.form.message": "Message *",
+                "contact.form.message.placeholder": "Briefly describe your situation. All information will be treated confidentially.",
+                "contact.form.submit": "Submit Confidential Inquiry",
+                "footer.tagline": "International Capital Recovery | Regulatory Compliance",
+                "footer.legal": "Legal Notice",
+                "footer.privacy": "Privacy Policy",
+                "footer.cookies": "Cookie Policy",
+                "footer.terms": "Terms and Conditions",
+                "footer.rights": "All rights reserved",
+                "footer.disclaimer.title": "Important Notice:",
+                "footer.disclaimer.text": "The information contained on this website is for general informational purposes and does not constitute specific legal advice or guarantee of results. Each case is evaluated individually according to its particular circumstances and the applicable legal framework."
+            }
+        };
+
+        // Función cambiar idioma
+        function changeLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        // Cargar idioma guardado
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'es';
+            if (savedLang !== 'es') {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    if (btn.textContent.includes(savedLang.toUpperCase())) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                changeLanguage(savedLang);
+            }
+        });
+
         // Modal functions
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
@@ -1087,7 +1062,6 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Close modal when clicking outside
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('active');
@@ -1109,7 +1083,7 @@
             });
         });
 
-        // Parallax effect on scroll
+        // Parallax
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const shapes = document.querySelectorAll('.shape');
@@ -1119,10 +1093,12 @@
         });
     </script>
 </body>
-</html>
-
-
-
-
-
+</html> data-i18n="services.recovery.title">Recuperación Internacional de Capitales</h3>
+                <p data-i18n="services.recovery.p1">Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+                <p style="margin-top: 1rem;" data-i18n="services.recovery.p2">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3
 
