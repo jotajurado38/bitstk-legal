@@ -683,8 +683,8 @@
                     <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
                 </ul>
                 <div class="language-selector">
-                    <button class="lang-btn active" onclick="changeLanguage('es')">🇪🇸 ES</button>
-                    <button class="lang-btn" onclick="changeLanguage('en')">🇺🇸 EN</button>
+                    <button class="lang-btn active" onclick="changeLanguage('es', event)">🇪🇸 ES</button>
+                    <button class="lang-btn" onclick="changeLanguage('en', event)">🇺🇸 EN</button>
                 </div>
             </div>
         </nav>
@@ -751,7 +751,7 @@
             
             <div class="regulatory-note">
                 <strong data-i18n="group.regulatory.title">Nota regulatoria:</strong>
-                <p data-i18n="group.regulatory.text">BitStk Legal no  presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.</p>
+                <p data-i18n="group.regulatory.text">BitStk Legal no se encuentra regulada por la Financial Conduct Authority (FCA) ni presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.</p>
             </div>
         </div>
     </section>
@@ -763,6 +763,13 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">💼</div>
+                <h3 data-i18n="services.recovery.title">Recuperación Internacional de Capitales</h3>
+                <p data-i18n="services.recovery.p1">Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+                <p style="margin-top: 1rem;" data-i18n="services.recovery.p2">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
                 <h3 data-i18n="services.compliance.title">Cumplimiento Normativo Internacional (Compliance)</h3>
                 <p data-i18n="services.compliance.p1">Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.</p>
                 <p style="margin-top: 1rem;" data-i18n="services.compliance.p2">Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.</p>
@@ -1015,11 +1022,13 @@
             }
         };
 
-        // Función cambiar idioma
-        function changeLanguage(lang) {
+        // Función cambiar idioma - CORREGIDA
+        function changeLanguage(lang, event) {
             localStorage.setItem('language', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
             
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -1036,18 +1045,19 @@
             });
         }
 
-        // Cargar idioma guardado
+        // Cargar idioma guardado - MEJORADO
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('language') || 'es';
             if (savedLang !== 'es') {
                 document.querySelectorAll('.lang-btn').forEach(btn => {
-                    if (btn.textContent.includes(savedLang.toUpperCase())) {
+                    const btnLang = btn.textContent.includes('EN') ? 'en' : 'es';
+                    if (btnLang === savedLang) {
                         btn.classList.add('active');
                     } else {
                         btn.classList.remove('active');
                     }
                 });
-                changeLanguage(savedLang);
+                changeLanguage(savedLang, null);
             }
         });
 
@@ -1093,14 +1103,7 @@
         });
     </script>
 </body>
-</html> data-i18n="services.recovery.title">Recuperación Internacional de Capitales</h3>
-                <p data-i18n="services.recovery.p1">Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
-                <p style="margin-top: 1rem;" data-i18n="services.recovery.p2">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
-                <h3
+</html>
 
 
 
