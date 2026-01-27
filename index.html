@@ -398,6 +398,277 @@
             font-size: 1.1rem;
             text-align: justify;
         }
+
+        /* ESTILOS TESTIMONIOS */
+        .testimonials-summary {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(46, 204, 113, 0.05));
+            border-radius: 15px;
+            border: 2px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .rating-overview {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #3498db;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-stars {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-count {
+            color: #546e7a;
+            font-size: 1rem;
+        }
+
+        .rating-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .rating-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rating-label {
+            min-width: 80px;
+            font-size: 0.95rem;
+            color: #546e7a;
+        }
+
+        .rating-bar {
+            flex: 1;
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .rating-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 0.5s ease;
+        }
+
+        .rating-percentage {
+            min-width: 40px;
+            text-align: right;
+            font-size: 0.95rem;
+            color: #546e7a;
+            font-weight: 600;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: #1a2a3a;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-stars {
+            color: #f39c12;
+            font-size: 1rem;
+        }
+
+        .testimonial-verified {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #2ecc71;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .testimonial-text {
+            color: #546e7a;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .testimonial-date {
+            color: #95a5a6;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-actions {
+            display: none;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .testimonial-actions.show {
+            display: flex;
+        }
+
+        .btn-edit, .btn-delete {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-edit {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background: #2980b9;
+        }
+
+        .btn-delete {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #c0392b;
+        }
+
+        .public-testimonial-form {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(46, 204, 113, 0.05));
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .public-testimonial-form h3 {
+            color: #1a2a3a;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .admin-panel {
+            display: none;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(192, 57, 43, 0.05));
+            border-radius: 12px;
+            border: 2px solid rgba(231, 76, 60, 0.2);
+        }
+
+        .admin-panel.show {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .admin-header h3 {
+            color: #c0392b;
+            font-size: 1.5rem;
+        }
+
+        .btn-logout {
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-logout:hover {
+            background: #c0392b;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #ddd;
+            transition: color 0.2s;
+        }
+
+        .star.active {
+            color: #f39c12;
+        }
+
+        .star:hover {
+            color: #f39c12;
+        }
         
         .contact-container {
             display: grid;
@@ -619,6 +890,13 @@
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
+
+        .modal-content h4 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
         
         .modal-content p {
             color: #546e7a;
@@ -646,6 +924,7 @@
             nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
+                text-align: center;
             }
             
             .hero h1 {
@@ -661,6 +940,14 @@
             }
             
             .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -680,6 +967,7 @@
                     <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
                     <li><a href="#quienes-somos" data-i18n="nav.about">Quiénes Somos</a></li>
                     <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+                    <li><a href="#testimonios" data-i18n="nav.testimonials">Testimonios</a></li>
                     <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
                 </ul>
                 <div class="language-selector">
@@ -776,7 +1064,130 @@
             </div>
         </div>
     </section>
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section id="testimonios">
+        <h2 data-i18n="testimonials.title">Testimonios de Clientes</h2>
+        <p class="section-subtitle" data-i18n="testimonials.subtitle">Lo que nuestros clientes dicen sobre nuestros servicios</p>
+        
+        <!-- Resumen de calificaciones -->
+        <div class="testimonials-summary">
+            <div class="rating-overview">
+                <div class="rating-number" id="averageRating">4.9</div>
+                <div class="rating-stars">★★★★★</div>
+                <div class="rating-count"><span data-i18n="testimonials.based">Basado en</span> <span id="totalReviews">0</span> <span data-i18n="testimonials.reviews">reseñas</span></div>
+            </div>
+            
+            <div class="rating-bars">
+                <div class="rating-bar-item">
+                    <div class="rating-label">5 <span data-i18n="testimonials.stars">estrellas</span></div>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" id="bar-5" style="width: 0%"></div>
+                    </div>
+                    <div class="rating-percentage" id="percent-5">0%</div>
+                </div>
+                <div class="rating-bar-item">
+                    <div class="rating-label">4 <span data-i18n="testimonials.stars">estrellas</span></div>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" id="bar-4" style="width: 0%"></div>
+                    </div>
+                    <div class="rating-percentage" id="percent-4">0%</div>
+                </div>
+                <div class="rating-bar-item">
+                    <div class="rating-label">3 <span data-i18n="testimonials.stars">estrellas</span></div>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" id="bar-3" style="width: 0%"></div>
+                    </div>
+                    <div class="rating-percentage" id="percent-3">0%</div>
+                </div>
+                <div class="rating-bar-item">
+                    <div class="rating-label">2 <span data-i18n="testimonials.stars">estrellas</span></div>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" id="bar-2" style="width: 0%"></div>
+                    </div>
+                    <div class="rating-percentage" id="percent-2">0%</div>
+                </div>
+                <div class="rating-bar-item">
+                    <div class="rating-label">1 <span data-i18n="testimonials.stars">estrella</span></div>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" id="bar-1" style="width: 0%"></div>
+                    </div>
+                    <div class="rating-percentage" id="percent-1">0%</div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Grid de testimonios -->
+        <div class="testimonials-grid" id="testimonialsGrid"></div>
+
+        <!-- Formulario público para enviar testimonios -->
+        <div class="public-testimonial-form">
+            <h3 data-i18n="testimonials.form.title">Comparte tu Experiencia</h3>
+            <form class="contact-form" id="publicTestimonialForm">
+                <div class="form-group">
+                    <label for="publicName" data-i18n="testimonials.form.name">Nombre completo *</label>
+                    <input type="text" id="publicName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="publicEmail" data-i18n="testimonials.form.email">Correo electrónico *</label>
+                    <input type="email" id="publicEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label data-i18n="testimonials.form.rating">Calificación *</label>
+                    <div class="star-rating" id="publicRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="publicTestimony" data-i18n="testimonials.form.testimony">Tu testimonio *</label>
+                    <textarea id="publicTestimony" required></textarea>
+                </div>
+                
+                <button type="submit" data-i18n="testimonials.form.submit">Enviar Testimonio</button>
+            </form>
+        </div>
+
+        <!-- Panel de administración (oculto) -->
+        <div class="admin-panel" id="adminPanel">
+            <div class="admin-header">
+                <h3>Panel de Administración</h3>
+                <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+            </div>
+            
+            <form class="contact-form" id="adminTestimonialForm">
+                <input type="hidden" id="editingId">
+                
+                <div class="form-group">
+                    <label for="adminName">Nombre completo *</label>
+                    <input type="text" id="adminName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Calificación *</label>
+                    <div class="star-rating" id="adminRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminTestimony">Testimonio *</label>
+                    <textarea id="adminTestimony" required></textarea>
+                </div>
+                
+                <button type="submit" id="adminSubmitBtn">Agregar Testimonio</button>
+            </form>
+        </div>
+    </section>
     <section id="contacto">
         <h2 data-i18n="contact.title">Contacto</h2>
         <p class="section-subtitle" data-i18n="contact.subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
@@ -827,12 +1238,12 @@
                 
                 <div class="form-group">
                     <label for="asunto" data-i18n="contact.form.subject">Asunto</label>
-                    <input type="text" id="asunto" name="asunto" data-i18n-placeholder="contact.form.subject.placeholder">
+                    <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre recuperación de capitales">
                 </div>
                 
                 <div class="form-group">
                     <label for="mensaje" data-i18n="contact.form.message">Mensaje *</label>
-                    <textarea id="mensaje" name="mensaje" required data-i18n-placeholder="contact.form.message.placeholder"></textarea>
+                    <textarea id="mensaje" name="mensaje" required placeholder="Describa brevemente su situación. Toda información será tratada de manera confidencial."></textarea>
                 </div>
                 
                 <button type="submit" data-i18n="contact.form.submit">Enviar Consulta Confidencial</button>
@@ -859,16 +1270,38 @@
             </p>
         </div>
     </footer>
-
-    <!-- Modals simplificados - contenido no traducido porque son muy extensos -->
+    <!-- MODALES CON CONTENIDO AMPLIADO -->
     <div id="avisoLegal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('avisoLegal')">&times;</button>
             <h2>Aviso Legal</h2>
-            <h3>1. Titularidad</h3>
-            <p>El presente sitio web es operado por BitStk Legal, firma dedicada a servicios de recuperación internacional de capitales, cumplimiento normativo y consultoría legal.</p>
-            <h3>2. Limitación de Responsabilidad</h3>
-            <p>La información tiene carácter meramente informativo y no constituye asesoría legal específica. BitStk Legal no garantiza resultados específicos.</p>
+            
+            <h3>1. Información General</h3>
+            <p>El presente sitio web es propiedad y está operado por BitStk Legal, una firma legal internacional especializada en recuperación de capitales, cumplimiento normativo y consultoría legal transfronteriza.</p>
+            
+            <h3>2. Objeto del Sitio Web</h3>
+            <p>Este sitio web tiene como finalidad proporcionar información general sobre los servicios legales que ofrece BitStk Legal. La información aquí contenida no constituye asesoramiento legal específico ni establece una relación abogado-cliente.</p>
+            
+            <h3>3. Limitación de Responsabilidad</h3>
+            <p>La información contenida en este sitio web tiene carácter meramente informativo y orientativo. BitStk Legal no garantiza la exactitud, completitud o actualidad de toda la información proporcionada, ni se responsabiliza por cualquier error u omisión en el contenido.</p>
+            
+            <h4>3.1 No Garantía de Resultados</h4>
+            <p>Los casos legales son únicos y complejos. BitStk Legal no puede garantizar resultados específicos en ningún asunto legal. Las referencias a casos anteriores, estadísticas o resultados no deben interpretarse como garantía de resultados futuros similares.</p>
+            
+            <h4>3.2 Jurisdicción</h4>
+            <p>BitStk Legal opera conforme a las leyes aplicables en las jurisdicciones donde presta servicios. Los servicios pueden variar según la jurisdicción y están sujetos a las regulaciones locales correspondientes.</p>
+            
+            <h3>4. Propiedad Intelectual</h3>
+            <p>Todos los contenidos de este sitio web, incluyendo pero no limitándose a textos, gráficos, logotipos, imágenes y software, son propiedad de BitStk Legal o sus licenciantes y están protegidos por las leyes de propiedad intelectual aplicables.</p>
+            
+            <h3>5. Enlaces Externos</h3>
+            <p>Este sitio web puede contener enlaces a sitios web de terceros. BitStk Legal no controla ni se responsabiliza por el contenido, políticas de privacidad o prácticas de sitios web de terceros.</p>
+            
+            <h3>6. Modificaciones</h3>
+            <p>BitStk Legal se reserva el derecho de modificar este aviso legal en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web.</p>
+            
+            <h3>7. Contacto</h3>
+            <p>Para cualquier consulta relacionada con este aviso legal, puede contactarnos en: soporte@bitstk.online</p>
         </div>
     </div>
 
@@ -876,10 +1309,74 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
             <h2>Política de Privacidad</h2>
-            <h3>1. Protección de Datos</h3>
-            <p>BitStk Legal se compromete a proteger la privacidad y los datos personales de los usuarios.</p>
-            <h3>2. Uso de Datos</h3>
-            <p>Los datos se utilizan exclusivamente para gestión de consultas y prestación de servicios legales.</p>
+            
+            <h3>1. Introducción</h3>
+            <p>En BitStk Legal, nos comprometemos a proteger la privacidad y confidencialidad de la información personal de nuestros clientes y visitantes del sitio web. Esta Política de Privacidad describe cómo recopilamos, usamos, compartimos y protegemos su información personal.</p>
+            
+            <h3>2. Información que Recopilamos</h3>
+            
+            <h4>2.1 Información Proporcionada Directamente</h4>
+            <p>Recopilamos información que usted nos proporciona voluntariamente, incluyendo:</p>
+            <ul>
+                <li>Nombre completo</li>
+                <li>Dirección de correo electrónico</li>
+                <li>Número de teléfono</li>
+                <li>Información sobre su consulta o caso legal</li>
+                <li>Cualquier otra información que elija compartir con nosotros</li>
+            </ul>
+            
+            <h4>2.2 Información Recopilada Automáticamente</h4>
+            <p>Cuando visita nuestro sitio web, podemos recopilar automáticamente cierta información, como:</p>
+            <ul>
+                <li>Dirección IP</li>
+                <li>Tipo de navegador y dispositivo</li>
+                <li>Páginas visitadas y tiempo de permanencia</li>
+                <li>Fuente de referencia</li>
+            </ul>
+            
+            <h3>3. Uso de la Información</h3>
+            <p>Utilizamos la información recopilada para los siguientes propósitos:</p>
+            <ul>
+                <li>Responder a sus consultas y proporcionar servicios legales</li>
+                <li>Comunicarnos con usted sobre su caso o consulta</li>
+                <li>Mejorar nuestro sitio web y servicios</li>
+                <li>Cumplir con obligaciones legales y regulatorias</li>
+                <li>Prevenir fraudes y proteger la seguridad</li>
+            </ul>
+            
+            <h3>4. Compartir Información</h3>
+            <p>BitStk Legal no vende, alquila ni comparte su información personal con terceros, excepto en las siguientes circunstancias:</p>
+            <ul>
+                <li>Con su consentimiento explícito</li>
+                <li>Con proveedores de servicios que nos ayudan a operar nuestro negocio</li>
+                <li>Cuando sea requerido por ley o proceso legal</li>
+                <li>Para proteger nuestros derechos, privacidad, seguridad o propiedad</li>
+            </ul>
+            
+            <h3>5. Seguridad de la Información</h3>
+            <p>Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.</p>
+            
+            <h3>6. Retención de Datos</h3>
+            <p>Conservamos su información personal durante el tiempo necesario para cumplir con los propósitos descritos en esta política, a menos que la ley requiera o permita un período de retención más largo.</p>
+            
+            <h3>7. Sus Derechos</h3>
+            <p>Usted tiene derecho a:</p>
+            <ul>
+                <li>Acceder a su información personal</li>
+                <li>Corregir información inexacta</li>
+                <li>Solicitar la eliminación de su información</li>
+                <li>Oponerse al procesamiento de su información</li>
+                <li>Retirar su consentimiento en cualquier momento</li>
+            </ul>
+            
+            <h3>8. Cookies</h3>
+            <p>Nuestro sitio web utiliza cookies técnicas y analíticas. Para más información, consulte nuestra Política de Cookies.</p>
+            
+            <h3>9. Cambios a esta Política</h3>
+            <p>Podemos actualizar esta Política de Privacidad periódicamente. Le notificaremos sobre cambios significativos publicando la nueva política en nuestro sitio web.</p>
+            
+            <h3>10. Contacto</h3>
+            <p>Si tiene preguntas sobre esta Política de Privacidad o desea ejercer sus derechos, contáctenos en: soporte@bitstk.online</p>
         </div>
     </div>
 
@@ -887,27 +1384,172 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('cookies')">&times;</button>
             <h2>Política de Cookies</h2>
-            <h3>1. Cookies</h3>
-            <p>Este sitio utiliza cookies técnicas y analíticas para mejorar la experiencia del usuario.</p>
+            
+            <h3>1. ¿Qué son las Cookies?</h3>
+            <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Las cookies permiten que el sitio web reconozca su dispositivo y recuerde información sobre su visita.</p>
+            
+            <h3>2. Tipos de Cookies que Utilizamos</h3>
+            
+            <h4>2.1 Cookies Técnicas (Necesarias)</h4>
+            <p>Estas cookies son esenciales para el funcionamiento básico del sitio web. Permiten la navegación y el uso de las funcionalidades básicas.</p>
+            <ul>
+                <li>Cookies de sesión</li>
+                <li>Cookies de preferencias de idioma</li>
+                <li>Cookies de seguridad</li>
+            </ul>
+            
+            <h4>2.2 Cookies Analíticas</h4>
+            <p>Estas cookies nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web, proporcionando información sobre:</p>
+            <ul>
+                <li>Número de visitantes</li>
+                <li>Páginas más visitadas</li>
+                <li>Tiempo de permanencia</li>
+                <li>Fuentes de tráfico</li>
+            </ul>
+            
+            <h4>2.3 Cookies Funcionales</h4>
+            <p>Estas cookies permiten que el sitio web recuerde las elecciones que hace (como su idioma preferido) y proporcione funcionalidades mejoradas y personalizadas.</p>
+            
+            <h3>3. Cookies de Terceros</h3>
+            <p>Algunos servicios de terceros que utilizamos pueden establecer sus propias cookies, incluyendo:</p>
+            <ul>
+                <li>Servicios de análisis web (Google Analytics)</li>
+                <li>Plataformas de comunicación</li>
+            </ul>
+            
+            <h3>4. Gestión de Cookies</h3>
+            <p>Puede controlar y/o eliminar las cookies según desee. Para más información, visite aboutcookies.org. Puede eliminar todas las cookies que ya están en su dispositivo y configurar la mayoría de los navegadores para evitar que se almacenen.</p>
+            
+            <h4>4.1 Gestión en Navegadores Principales</h4>
+            <ul>
+                <li><strong>Google Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos de sitios</li>
+                <li><strong>Mozilla Firefox:</strong> Opciones > Privacidad y seguridad > Cookies y datos del sitio</li>
+                <li><strong>Safari:</strong> Preferencias > Privacidad > Cookies y datos de sitios web</li>
+                <li><strong>Microsoft Edge:</strong> Configuración > Privacidad y servicios > Cookies</li>
+            </ul>
+            
+            <h3>5. Consecuencias de Deshabilitar Cookies</h3>
+            <p>Si deshabilita las cookies, algunas funcionalidades del sitio web pueden no funcionar correctamente, incluyendo:</p>
+            <ul>
+                <li>Preferencias de idioma</li>
+                <li>Funcionalidades de formularios</li>
+                <li>Experiencia de navegación personalizada</li>
+            </ul>
+            
+            <h3>6. Duración de las Cookies</h3>
+            <p>Utilizamos tanto cookies de sesión (que expiran cuando cierra el navegador) como cookies persistentes (que permanecen en su dispositivo durante un período específico o hasta que las elimine).</p>
+            
+            <h3>7. Actualizaciones de esta Política</h3>
+            <p>Podemos actualizar esta Política de Cookies periódicamente. La fecha de la última actualización se indicará en la parte superior de esta política.</p>
+            
+            <h3>8. Más Información</h3>
+            <p>Para más información sobre nuestro uso de cookies o si tiene alguna pregunta, contáctenos en: soporte@bitstk.online</p>
         </div>
     </div>
 
     <div id="terminos" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('terminos')">&times;</button>
-            <h2>Términos y Condiciones</h2>
-            <h3>1. Aceptación</h3>
-            <p>El acceso implica la aceptación de estos términos y condiciones.</p>
+            <h2>Términos y Condiciones de Uso</h2>
+            
+            <h3>1. Aceptación de los Términos</h3>
+            <p>Al acceder y utilizar este sitio web, usted acepta estar sujeto a estos Términos y Condiciones de Uso, todas las leyes y regulaciones aplicables, y acepta que es responsable del cumplimiento de las leyes locales aplicables.</p>
+            
+            <h3>2. Uso del Sitio Web</h3>
+            
+            <h4>2.1 Licencia de Uso</h4>
+            <p>Se le otorga una licencia limitada, no exclusiva y no transferible para acceder y usar este sitio web únicamente para fines personales y no comerciales.</p>
+            
+            <h4>2.2 Restricciones de Uso</h4>
+            <p>Usted se compromete a NO:</p>
+            <ul>
+                <li>Usar el sitio web para propósitos ilegales o no autorizados</li>
+                <li>Intentar obtener acceso no autorizado a cualquier parte del sitio web</li>
+                <li>Interferir con el funcionamiento del sitio web</li>
+                <li>Reproducir, duplicar, copiar o revender cualquier parte del sitio web sin autorización</li>
+                <li>Usar técnicas de scraping o minería de datos</li>
+                <li>Transmitir virus, malware o cualquier código malicioso</li>
+            </ul>
+            
+            <h3>3. Relación Abogado-Cliente</h3>
+            <p>El uso de este sitio web y la presentación de información a través de formularios de contacto NO establece una relación abogado-cliente. Una relación abogado-cliente se establece únicamente mediante un acuerdo escrito formal.</p>
+            
+            <h4>3.1 Confidencialidad Limitada</h4>
+            <p>La información enviada a través de formularios en este sitio web puede no ser confidencial hasta que se establezca formalmente una relación abogado-cliente. No envíe información confidencial sensible hasta que hayamos acordado formalmente representarlo.</p>
+            
+            <h3>4. Contenido del Usuario</h3>
+            <p>Al enviar contenido a través de nuestro sitio web (comentarios, testimonios, consultas), usted:</p>
+            <ul>
+                <li>Garantiza que tiene derecho a publicar dicho contenido</li>
+                <li>Otorga a BitStk Legal una licencia no exclusiva para usar, reproducir y mostrar dicho contenido</li>
+                <li>Acepta que el contenido no viola los derechos de terceros</li>
+                <li>Acepta que el contenido no contiene material ilegal, difamatorio u ofensivo</li>
+            </ul>
+            
+            <h3>5. Limitación de Responsabilidad</h3>
+            <p>En la máxima medida permitida por la ley:</p>
+            <ul>
+                <li>BitStk Legal no será responsable por daños directos, indirectos, incidentales, consecuentes o punitivos</li>
+                <li>El sitio web se proporciona "tal cual" sin garantías de ningún tipo</li>
+                <li>No garantizamos la disponibilidad ininterrumpida del sitio web</li>
+                <li>No garantizamos que el sitio web esté libre de errores o virus</li>
+            </ul>
+            
+            <h3>6. Indemnización</h3>
+            <p>Usted acepta indemnizar y mantener indemne a BitStk Legal, sus afiliados, directores, empleados y agentes de cualquier reclamo, daño, obligación, pérdida, responsabilidad, costo o deuda resultante de:</p>
+            <ul>
+                <li>Su uso del sitio web</li>
+                <li>Su violación de estos Términos y Condiciones</li>
+                <li>Su violación de derechos de terceros</li>
+            </ul>
+            
+            <h3>7. Enlaces a Terceros</h3>
+            <p>Este sitio web puede contener enlaces a sitios web de terceros. BitStk Legal no controla ni respalda estos sitios y no es responsable por su contenido o prácticas. El acceso a sitios de terceros es bajo su propio riesgo.</p>
+            
+            <h3>8. Modificaciones</h3>
+            <p>BitStk Legal se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web. Su uso continuado del sitio web después de cualquier cambio constituye su aceptación de los nuevos términos.</p>
+            
+            <h3>9. Terminación</h3>
+            <p>BitStk Legal puede, a su sola discreción, terminar o suspender su acceso al sitio web sin previo aviso por cualquier motivo, incluyendo pero no limitándose a la violación de estos Términos y Condiciones.</p>
+            
+            <h3>10. Ley Aplicable y Jurisdicción</h3>
+            <p>Estos Términos y Condiciones se rigen por las leyes aplicables en las jurisdicciones donde BitStk Legal opera. Cualquier disputa relacionada con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales competentes en dichas jurisdicciones.</p>
+            
+            <h3>11. Divisibilidad</h3>
+            <p>Si alguna disposición de estos Términos y Condiciones se considera inválida o inaplicable, las disposiciones restantes continuarán en pleno vigor y efecto.</p>
+            
+            <h3>12. Acuerdo Completo</h3>
+            <p>Estos Términos y Condiciones, junto con nuestra Política de Privacidad y Política de Cookies, constituyen el acuerdo completo entre usted y BitStk Legal con respecto al uso de este sitio web.</p>
+            
+            <h3>13. Contacto</h3>
+            <p>Para cualquier pregunta sobre estos Términos y Condiciones, contáctenos en:</p>
+            <p><strong>Email:</strong> soporte@bitstk.online</p>
+            <p><strong>Última actualización:</strong> Enero 2025</p>
         </div>
     </div>
 
+    <!-- Modal de Login Admin -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <button class="modal-close" onclick="closeModal('adminLoginModal')">&times;</button>
+            <h2>Acceso Administrador</h2>
+            <form class="contact-form" id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminPassword">Contraseña</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
     <script>
-        // Traducciones
+        // ===== TRADUCCIONES COMPLETAS =====
         const translations = {
             es: {
                 "nav.home": "Inicio",
                 "nav.about": "Quiénes Somos",
                 "nav.services": "Servicios",
+                "nav.testimonials": "Testimonios",
                 "nav.contact": "Contacto",
                 "hero.subtitle": "Recuperación Internacional de Capitales",
                 "hero.description": "Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.",
@@ -938,6 +1580,17 @@
                 "services.compliance.title": "Cumplimiento Normativo Internacional (Compliance)",
                 "services.compliance.p1": "Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.",
                 "services.compliance.p2": "Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.",
+                "testimonials.title": "Testimonios de Clientes",
+                "testimonials.subtitle": "Lo que nuestros clientes dicen sobre nuestros servicios",
+                "testimonials.based": "Basado en",
+                "testimonials.reviews": "reseñas",
+                "testimonials.stars": "estrellas",
+                "testimonials.form.title": "Comparte tu Experiencia",
+                "testimonials.form.name": "Nombre completo *",
+                "testimonials.form.email": "Correo electrónico *",
+                "testimonials.form.rating": "Calificación *",
+                "testimonials.form.testimony": "Tu testimonio *",
+                "testimonials.form.submit": "Enviar Testimonio",
                 "contact.title": "Contacto",
                 "contact.subtitle": "Estamos disponibles para atender sus consultas de manera confidencial y profesional",
                 "contact.info.title": "Información de Contacto",
@@ -949,9 +1602,7 @@
                 "contact.form.name": "Nombre completo *",
                 "contact.form.email": "Correo electrónico *",
                 "contact.form.subject": "Asunto",
-                "contact.form.subject.placeholder": "Ej: Consulta sobre recuperación de capitales",
                 "contact.form.message": "Mensaje *",
-                "contact.form.message.placeholder": "Describa brevemente su situación. Toda información será tratada de manera confidencial.",
                 "contact.form.submit": "Enviar Consulta Confidencial",
                 "footer.tagline": "Recuperación Internacional de Capitales | Cumplimiento Normativo",
                 "footer.legal": "Aviso Legal",
@@ -966,6 +1617,7 @@
                 "nav.home": "Home",
                 "nav.about": "About Us",
                 "nav.services": "Services",
+                "nav.testimonials": "Testimonials",
                 "nav.contact": "Contact",
                 "hero.subtitle": "International Capital Recovery",
                 "hero.description": "Legal firm specialized in asset recovery and international regulatory compliance. We protect your assets with globally coordinated legal strategies.",
@@ -996,6 +1648,17 @@
                 "services.compliance.title": "International Regulatory Compliance",
                 "services.compliance.p1": "We offer International Regulatory Compliance services, focused on preventing legal, financial and reputational risks in complex and multi-jurisdictional regulatory environments.",
                 "services.compliance.p2": "We advise on the design and implementation of compliance programs, internal control and fraud prevention, aligned with international standards and best practices, strengthening corporate governance and legal security of our clients.",
+                "testimonials.title": "Client Testimonials",
+                "testimonials.subtitle": "What our clients say about our services",
+                "testimonials.based": "Based on",
+                "testimonials.reviews": "reviews",
+                "testimonials.stars": "stars",
+                "testimonials.form.title": "Share Your Experience",
+                "testimonials.form.name": "Full name *",
+                "testimonials.form.email": "Email address *",
+                "testimonials.form.rating": "Rating *",
+                "testimonials.form.testimony": "Your testimonial *",
+                "testimonials.form.submit": "Submit Testimonial",
                 "contact.title": "Contact",
                 "contact.subtitle": "We are available to attend your inquiries confidentially and professionally",
                 "contact.info.title": "Contact Information",
@@ -1007,9 +1670,7 @@
                 "contact.form.name": "Full name *",
                 "contact.form.email": "Email address *",
                 "contact.form.subject": "Subject",
-                "contact.form.subject.placeholder": "E.g.: Capital recovery inquiry",
                 "contact.form.message": "Message *",
-                "contact.form.message.placeholder": "Briefly describe your situation. All information will be treated confidentially.",
                 "contact.form.submit": "Submit Confidential Inquiry",
                 "footer.tagline": "International Capital Recovery | Regulatory Compliance",
                 "footer.legal": "Legal Notice",
@@ -1022,46 +1683,335 @@
             }
         };
 
-        // Función cambiar idioma - CORREGIDA
-        function changeLanguage(lang, event) {
-            localStorage.setItem('language', lang);
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
+        // ===== SISTEMA DE TESTIMONIOS =====
+        let isAdmin = false;
+        let currentPublicRating = 0;
+        let currentAdminRating = 0;
+
+        // Testimonios iniciales de ejemplo
+        const initialTestimonials = [
+            {
+                id: 1,
+                name: "María González Rodríguez",
+                rating: 5,
+                text: "Excelente servicio. Lograron recuperar mis fondos en tiempo récord comparado con otras firmas que consulté. Su equipo es profesional y mantienen comunicación constante. Los honorarios son muy razonables considerando los resultados obtenidos.",
+                date: "2024-12-15",
+                verified: true
+            },
+            {
+                id: 2,
+                name: "John Mitchell",
+                rating: 5,
+                text: "Outstanding legal team. They successfully recovered $850K from an offshore investment scam. The process took 8 months, much faster than I expected. Their fees were transparent and significantly lower than other firms I contacted. Highly recommended!",
+                date: "2024-11-28",
+                verified: true
+            },
+            {
+                id: 3,
+                name: "Carlos Méndez",
+                rating: 5,
+                text: "Recuperaron mi inversión en un fondo fraudulento. El proceso fue más rápido de lo que imaginaba - solo 6 meses. Los costos fueron justos y me mantuvieron informado en todo momento. Definitivamente vale la pena trabajar con ellos.",
+                date: "2024-11-10",
+                verified: true
+            },
+            {
+                id: 4,
+                name: "Sarah Thompson",
+                rating: 4,
+                text: "Professional service and good communication throughout the process. They recovered 85% of my capital from a cross-border fraud case. The timeline was reasonable (10 months) and costs were fair. Would recommend for international cases.",
+                date: "2024-10-22",
+                verified: true
+            },
+            {
+                id: 5,
+                name: "Roberto Silva",
+                rating: 5,
+                text: "Servicio impecable. Su equipo legal es muy competente y sus tarifas son competitivas. Lograron resolver mi caso en 7 meses cuando otras firmas me decían que tardaría más de un año. La relación costo-beneficio es excelente.",
+                date: "2024-10-05",
+                verified: true
+            },
+            {
+                id: 6,
+                name: "Jennifer Park",
+                rating: 5,
+                text: "After being scammed by a fake crypto platform, BitStk Legal helped me recover $620K in just 9 months. Their expertise in international law is impressive and their fees are very reasonable. They truly care about their clients.",
+                date: "2024-09-18",
+                verified: true
             }
+        ];
+
+        // Inicializar testimonios en localStorage
+        function initializeTestimonials() {
+            if (!localStorage.getItem('testimonials')) {
+                localStorage.setItem('testimonials', JSON.stringify(initialTestimonials));
+            }
+        }
+
+        // Obtener testimonios
+        function getTestimonials() {
+            const stored = localStorage.getItem('testimonials');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        // Guardar testimonios
+        function saveTestimonials(testimonials) {
+            localStorage.setItem('testimonials', JSON.stringify(testimonials));
+        }
+
+        // Generar iniciales
+        function getInitials(name) {
+            return name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        }
+
+        // Generar estrellas
+        function generateStars(rating) {
+            return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        }
+
+        // Calcular estadísticas
+        function calculateStats() {
+            const testimonials = getTestimonials();
+            const total = testimonials.length;
             
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
+            if (total === 0) {
+                return { average: 0, distribution: [0, 0, 0, 0, 0], total };
+            }
+
+            const sum = testimonials.reduce((acc, t) => acc + t.rating, 0);
+            const average = (sum / total).toFixed(1);
+            
+            const distribution = [0, 0, 0, 0, 0];
+            testimonials.forEach(t => {
+                distribution[t.rating - 1]++;
             });
+
+            return { average, distribution, total };
+        }
+
+        // Actualizar resumen
+        function updateRatingSummary() {
+            const stats = calculateStats();
             
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                const key = el.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
-                    el.placeholder = translations[lang][key];
-                }
+            document.getElementById('averageRating').textContent = stats.average;
+            document.getElementById('totalReviews').textContent = stats.total;
+
+            for (let i = 1; i <= 5; i++) {
+                const count = stats.distribution[i - 1];
+                const percentage = stats.total > 0 ? Math.round((count / stats.total) * 100) : 0;
+                
+                document.getElementById(`bar-${i}`).style.width = percentage + '%';
+                document.getElementById(`percent-${i}`).textContent = percentage + '%';
+            }
+        }
+
+        // Renderizar testimonios
+        function renderTestimonials() {
+            const testimonials = getTestimonials();
+            const grid = document.getElementById('testimonialsGrid');
+            
+            grid.innerHTML = testimonials.map(t => `
+                <div class="testimonial-card">
+                    <div class="testimonial-verified">✓ Cliente Verificado</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">${getInitials(t.name)}</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">${t.name}</div>
+                            <div class="testimonial-stars">${generateStars(t.rating)}</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">${t.text}</p>
+                    <div class="testimonial-date">${new Date(t.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                    <div class="testimonial-actions ${isAdmin ? 'show' : ''}">
+                        <button class="btn-edit" onclick="editTestimonial(${t.id})">Editar</button>
+                        <button class="btn-delete" onclick="deleteTestimonial(${t.id})">Eliminar</button>
+                    </div>
+                </div>
+            `).join('');
+
+            updateRatingSummary();
+        }
+
+        // Sistema de calificación por estrellas
+        function setupStarRating(containerId) {
+            const container = document.getElementById(containerId);
+            const stars = container.querySelectorAll('.star');
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    
+                    if (containerId === 'publicRating') {
+                        currentPublicRating = rating;
+                    } else {
+                        currentAdminRating = rating;
+                    }
+                    
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
             });
         }
 
-        // Cargar idioma guardado - MEJORADO
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('language') || 'es';
-            if (savedLang !== 'es') {
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    const btnLang = btn.textContent.includes('EN') ? 'en' : 'es';
-                    if (btnLang === savedLang) {
-                        btn.classList.add('active');
+        // Formulario público
+        document.getElementById('publicTestimonialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (currentPublicRating === 0) {
+                alert('Por favor selecciona una calificación');
+                return;
+            }
+
+            const name = document.getElementById('publicName').value;
+            const email = document.getElementById('publicEmail').value;
+            const testimony = document.getElementById('publicTestimony').value;
+
+            // Enviar por email
+            const formData = new FormData();
+            formData.append('nombre', name);
+            formData.append('email', email);
+            formData.append('calificacion', currentPublicRating);
+            formData.append('testimonio', testimony);
+
+            fetch('https://formspree.io/f/xqeeadjv', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('¡Gracias por tu testimonio! Lo revisaremos pronto.');
+                    this.reset();
+                    currentPublicRating = 0;
+                    document.querySelectorAll('#publicRating .star').forEach(s => s.classList.remove('active'));
+                } else {
+                    alert('Hubo un error. Por favor intenta de nuevo.');
+                }
+            });
+        });
+
+        // Formulario admin
+        document.getElementById('adminTestimonialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (currentAdminRating === 0) {
+                alert('Por favor selecciona una calificación');
+                return;
+            }
+
+            const id = document.getElementById('editingId').value;
+            const name = document.getElementById('adminName').value;
+            const testimony = document.getElementById('adminTestimony').value;
+            
+            const testimonials = getTestimonials();
+            
+            if (id) {
+                // Editar
+                const index = testimonials.findIndex(t => t.id == id);
+                if (index !== -1) {
+                    testimonials[index] = {
+                        ...testimonials[index],
+                        name,
+                        rating: currentAdminRating,
+                        text: testimony
+                    };
+                }
+            } else {
+                // Agregar nuevo
+                const newTestimonial = {
+                    id: Date.now(),
+                    name,
+                    rating: currentAdminRating,
+                    text: testimony,
+                    date: new Date().toISOString().split('T')[0],
+                    verified: true
+                };
+                testimonials.push(newTestimonial);
+            }
+            
+            saveTestimonials(testimonials);
+            renderTestimonials();
+            
+            // Resetear
+            this.reset();
+            document.getElementById('editingId').value = '';
+            currentAdminRating = 0;
+            document.querySelectorAll('#adminRating .star').forEach(s => s.classList.remove('active'));
+            document.getElementById('adminSubmitBtn').textContent = 'Agregar Testimonio';
+        });
+
+        // Editar testimonio
+        function editTestimonial(id) {
+            const testimonials = getTestimonials();
+            const testimonial = testimonials.find(t => t.id === id);
+            
+            if (testimonial) {
+                document.getElementById('editingId').value = id;
+                document.getElementById('adminName').value = testimonial.name;
+                document.getElementById('adminTestimony').value = testimonial.text;
+                currentAdminRating = testimonial.rating;
+                
+                const stars = document.querySelectorAll('#adminRating .star');
+                stars.forEach((s, index) => {
+                    if (index < testimonial.rating) {
+                        s.classList.add('active');
                     } else {
-                        btn.classList.remove('active');
+                        s.classList.remove('active');
                     }
                 });
-                changeLanguage(savedLang, null);
+                
+                document.getElementById('adminSubmitBtn').textContent = 'Actualizar Testimonio';
+                document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Eliminar testimonio
+        function deleteTestimonial(id) {
+            if (confirm('¿Estás seguro de eliminar este testimonio?')) {
+                let testimonials = getTestimonials();
+                testimonials = testimonials.filter(t => t.id !== id);
+                saveTestimonials(testimonials);
+                renderTestimonials();
+            }
+        }
+
+        // Login admin con Ctrl+Shift+A
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                e.preventDefault();
+                openModal('adminLoginModal');
             }
         });
 
-        // Modal functions
+        // Formulario login
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            
+            if (password === 'Diego2843927') {
+                isAdmin = true;
+                document.getElementById('adminPanel').classList.add('show');
+                renderTestimonials();
+                closeModal('adminLoginModal');
+                this.reset();
+            } else {
+                alert('Contraseña incorrecta');
+            }
+        });
+
+        // Logout
+        function logout() {
+            isAdmin = false;
+            document.getElementById('adminPanel').classList.remove('show');
+            renderTestimonials();
+        }
+
+        // ===== MODALES =====
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1078,8 +2028,24 @@
                 document.body.style.overflow = 'auto';
             }
         }
-        
-        // Smooth scroll
+
+        // ===== CAMBIO DE IDIOMA =====
+        function changeLanguage(lang, event) {
+            localStorage.setItem('language', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -1093,7 +2059,7 @@
             });
         });
 
-        // Parallax
+        // ===== PARALLAX =====
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const shapes = document.querySelectorAll('.shape');
@@ -1101,9 +2067,33 @@
                 shape.style.transform = `translateY(${scrolled * (0.3 + index * 0.1)}px)`;
             });
         });
+
+        // ===== INICIALIZACIÓN =====
+        window.addEventListener('DOMContentLoaded', () => {
+            // Inicializar testimonios
+            initializeTestimonials();
+            renderTestimonials();
+            setupStarRating('publicRating');
+            setupStarRating('adminRating');
+            
+            // Cargar idioma
+            const savedLang = localStorage.getItem('language') || 'es';
+            if (savedLang !== 'es') {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    const btnLang = btn.textContent.includes('EN') ? 'en' : 'es';
+                    if (btnLang === savedLang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                changeLanguage(savedLang, null);
+            }
+        });
     </script>
 </body>
 </html>
+
 
 
 
