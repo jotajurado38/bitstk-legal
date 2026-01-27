@@ -1453,7 +1453,14 @@
         function renderTestimonials() {
             const testimonials = loadTestimonials();
             const grid = document.getElementById('testimonialsGrid');
+            
+            if (!grid) {
+                console.error('No se encontró el contenedor de testimonios');
+                return;
+            }
+            
             grid.innerHTML = '';
+            console.log('Renderizando', testimonials.length, 'testimonios');
 
             testimonials.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(t => {
                 const card = document.createElement('div');
@@ -1476,6 +1483,8 @@
                 `;
                 grid.appendChild(card);
             });
+            
+            console.log('Testimonios renderizados correctamente');
         }
 
         // Abrir login de admin
