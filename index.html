@@ -1613,6 +1613,318 @@
                 shape.style.transform = `translateY(${scrolled * (0.3 + index * 0.1)}px)`;
             });
         });
+        🔧 PASO 3: JAVASCRIPT - PEGAR ESTE CÓDIGO EN TU <script> EXISTENTE
+(Agregar después de las funciones existentes, ANTES del cierre </script>)
+═══════════════════════════════════════════════════════════════════════════════
+
+        // ==================== SISTEMA DE TESTIMONIOS ====================
+        const ADMIN_PASSWORD = "Diego2843927";
+        let isAdmin = false;
+
+        const defaultTestimonials = [
+            {
+                id: 1,
+                name: "Carlos Mendoza",
+                rating: 5,
+                text: "Recuperaron mi capital en menos de 6 meses con costos muy inferiores a otras firmas que consulté. El proceso fue transparente desde el inicio y mantuvieron comunicación constante. Muy profesionales.",
+                date: "2024-11-15",
+                verified: true
+            },
+            {
+                id: 2,
+                name: "Ana López García",
+                rating: 5,
+                text: "Excelente asesoría legal. Me ayudaron a recuperar fondos de una inversión fraudulenta internacional. Su equipo fue transparente sobre los tiempos y costos, que fueron muy razonables comparados con otras opciones.",
+                date: "2024-10-22",
+                verified: true
+            },
+            {
+                id: 3,
+                name: "Michael Roberts",
+                rating: 5,
+                text: "They solved my case faster than expected and at a much lower cost than other firms quoted. Their international network and expertise in cross-border cases is impressive. Highly recommended.",
+                date: "2024-09-18",
+                verified: true
+            },
+            {
+                id: 4,
+                name: "Laura Gutiérrez",
+                rating: 4,
+                text: "Muy buena experiencia en general. El proceso fue más ágil de lo que esperaba y los costos fueron justos. Solo hubo pequeños retrasos en la comunicación, pero nada grave. Los recomendaría.",
+                date: "2024-09-05",
+                verified: true
+            },
+            {
+                id: 5,
+                name: "David Harrison",
+                rating: 5,
+                text: "Transparent, efficient and reliable legal recovery services. They kept me informed every step of the way and their fees were significantly lower than competitors. Excellent results in a reasonable timeframe.",
+                date: "2024-08-28",
+                verified: true
+            },
+            {
+                id: 6,
+                name: "María José Pérez",
+                rating: 5,
+                text: "Una firma seria y ética. Lograron recuperar mi inversión perdida en tiempo récord. Sus honorarios fueron justos y mucho más accesibles que otras alternativas que investigué. Totalmente recomendados.",
+                date: "2024-08-10",
+                verified: true
+            }
+        ];
+
+        // Cargar testimonios
+        function loadTestimonials() {
+            let testimonials = JSON.parse(localStorage.getItem("testimonials"));
+            if (!testimonials || testimonials.length === 0) {
+                localStorage.setItem("testimonials", JSON.stringify(defaultTestimonials));
+                testimonials = defaultTestimonials;
+            }
+            renderTestimonials(testimonials);
+            updateRatingSummary(testimonials);
+        }
+
+        // Renderizar testimonios
+        function renderTestimonials(list) {
+            const grid = document.getElementById("testimonialsGrid");
+            const currentLang = localStorage.getItem('language') || 'es';
+            const verifiedText = currentLang === 'es' ? '✓ Cliente verificado' : '✓ Verified Client';
+            
+            grid.innerHTML = "";
+            list.forEach(t => {
+                const initials = t.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+                const fullStars = "★".repeat(t.rating);
+                const emptyStars = "☆".repeat(5 - t.rating);
+                const stars = fullStars + emptyStars;
+                
+                const dateObj = new Date(t.date);
+                const formattedDate = dateObj.toLocaleDateString(
+                    currentLang === 'es' ? 'es-ES' : 'en-US',
+                    { year: 'numeric', month: 'long', day: 'numeric' }
+                );
+                
+                const cardHTML = `
+                    <div class="testimonial-card" data-id="${t.id}">
+                        <div class="card-header">
+                            <div class="avatar">${initials}</div>
+                            <div class="testimonial-info">
+                                <strong>${t.name}</strong>
+                                <div class="stars">${stars}</div>
+                                ${t.verified ? `<span class="verified">${verifiedText}</span>` : ''}
+                            </div>
+                        </div>
+                        <p>${t.text}</p>
+                        <small>${formattedDate}</small>
+                        ${isAdmin ? `
+                            <div class="admin-actions">
+                                <button class="btn-edit" onclick="editTestimonial(${t.id})">✏️ Editar</button>
+                                <button class="btn-delete" onclick="deleteTestimonial(${t.id})">🗑️ Eliminar</button>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        // Actualizar resumen de calificaciones
+        function updateRatingSummary(list) {
+            const total = list.length;
+            if (total === 0) return;
+            
+            const avgRating = (list.reduce((sum, t) => sum + t.rating, 0) / total).toFixed(1);
+            
+            const ratingCounts = [0, 0, 0, 0, 0];
+            list.forEach(t => {
+                if (t.rating >= 1 && t.rating <= 5) {
+                    ratingCounts[t.rating - 1]++;
+                }
+            });
+            
+            document.getElementById("avgRating").textContent = avgRating;
+            
+            const currentLang = localStorage.getItem('language') || 'es';
+            const basedOnText = currentLang === 'es' 
+                ? `Basado en ${total} reseña${total !== 1 ? 's' : ''}`
+                : `Based on ${total} review${total !== 1 ? 's' : ''}`;
+            document.getElementById("totalReviews").textContent = basedOnText;
+            
+            const bars = document.querySelectorAll(".rating-bars .bar i");
+            for (let i = 0; i < 5; i++) {
+                const percentage = total > 0 ? (ratingCounts[4 - i] / total * 100) : 0;
+                bars[i].style.width = percentage + "%";
+            }
+        }
+
+        // Guardar testimonio (admin)
+        function saveTestimonial() {
+            const name = document.getElementById("adminName").value.trim();
+            const rating = parseInt(document.getElementById("adminRating").value);
+            const text = document.getElementById("adminText").value.trim();
+            const editingId = document.getElementById("editingId").value;
+            
+            if (!name || !text) {
+                alert("Por favor completa todos los campos");
+                return;
+            }
+            
+            if (name.length < 3) {
+                alert("El nombre debe tener al menos 3 caracteres");
+                return;
+            }
+            
+            if (text.length < 20) {
+                alert("El testimonio debe tener al menos 20 caracteres");
+                return;
+            }
+            
+            let testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+            
+            if (editingId) {
+                // Editar existente
+                testimonials = testimonials.map(t => 
+                    t.id === parseInt(editingId) 
+                        ? {...t, name, rating, text}
+                        : t
+                );
+            } else {
+                // Agregar nuevo
+                testimonials.push({
+                    id: Date.now(),
+                    name,
+                    rating,
+                    text,
+                    date: new Date().toISOString().split("T")[0],
+                    verified: true
+                });
+            }
+            
+            localStorage.setItem("testimonials", JSON.stringify(testimonials));
+            renderTestimonials(testimonials);
+            updateRatingSummary(testimonials);
+            cancelEdit();
+            
+            alert(editingId ? "Testimonio actualizado exitosamente" : "Testimonio agregado exitosamente");
+        }
+
+        // Editar testimonio (admin)
+        function editTestimonial(id) {
+            const testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+            const testimonial = testimonials.find(t => t.id === id);
+            
+            if (testimonial) {
+                document.getElementById("adminName").value = testimonial.name;
+                document.getElementById("adminRating").value = testimonial.rating;
+                document.getElementById("adminText").value = testimonial.text;
+                document.getElementById("editingId").value = id;
+                
+                // Scroll al panel
+                document.getElementById("adminPanel").scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+
+        // Cancelar edición
+        function cancelEdit() {
+            document.getElementById("adminName").value = "";
+            document.getElementById("adminRating").value = "5";
+            document.getElementById("adminText").value = "";
+            document.getElementById("editingId").value = "";
+        }
+
+        // Eliminar testimonio (admin)
+        function deleteTestimonial(id) {
+            if (!confirm("¿Estás seguro de que deseas eliminar este testimonio? Esta acción no se puede deshacer.")) {
+                return;
+            }
+            
+            let testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+            testimonials = testimonials.filter(t => t.id !== id);
+            
+            localStorage.setItem("testimonials", JSON.stringify(testimonials));
+            renderTestimonials(testimonials);
+            updateRatingSummary(testimonials);
+            
+            alert("Testimonio eliminado exitosamente");
+        }
+
+        // Login administrador (Ctrl+Shift+A)
+        document.addEventListener("keydown", function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === "A") {
+                e.preventDefault();
+                document.getElementById("loginModal").classList.add("active");
+                document.body.style.overflow = 'hidden';
+                document.getElementById("adminPassword").focus();
+            }
+        });
+
+        // Verificar contraseña admin
+        function checkAdminPassword() {
+            const password = document.getElementById("adminPassword").value;
+            
+            if (password === ADMIN_PASSWORD) {
+                isAdmin = true;
+                document.getElementById("adminPanel").style.display = "block";
+                closeLoginModal();
+                
+                // Re-renderizar con botones admin
+                const testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+                renderTestimonials(testimonials);
+                
+                // Scroll al panel
+                setTimeout(() => {
+                    document.getElementById("adminPanel").scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
+                
+                alert("¡Bienvenido, administrador!");
+            } else {
+                alert("Contraseña incorrecta. Por favor, intenta de nuevo.");
+                document.getElementById("adminPassword").value = "";
+                document.getElementById("adminPassword").focus();
+            }
+        }
+
+        // Cerrar modal de login
+        function closeLoginModal() {
+            document.getElementById("loginModal").classList.remove("active");
+            document.body.style.overflow = 'auto';
+            document.getElementById("adminPassword").value = "";
+        }
+
+        // Logout admin
+        function logoutAdmin() {
+            if (!confirm("¿Seguro que deseas cerrar sesión de administrador?")) {
+                return;
+            }
+            
+            isAdmin = false;
+            document.getElementById("adminPanel").style.display = "none";
+            cancelEdit();
+            
+            // Re-renderizar sin botones admin
+            const testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+            renderTestimonials(testimonials);
+            
+            alert("Sesión cerrada exitosamente");
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'loginModal') {
+                closeLoginModal();
+            }
+        });
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById("loginModal").classList.contains('active')) {
+                closeLoginModal();
+            }
+        });
     </script>
 </body>
 </html> data-i18n="services.recovery.title">Recuperación Internacional de Capitales</h3>
@@ -1623,6 +1935,7 @@
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
                 <h3
+
 
 
 
