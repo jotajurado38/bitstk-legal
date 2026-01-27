@@ -638,7 +638,7 @@
             height: 50px;
             background: linear-gradient(135deg, #3498db, #2ecc71);
             border-radius: 50%;
-            display: flex;
+            display: none; /* Oculto por defecto */
             align-items: center;
             justify-content: center;
             color: white;
@@ -648,6 +648,10 @@
             transition: all 0.3s;
             z-index: 999;
             border: none;
+        }
+
+        .admin-trigger.show {
+            display: flex;
         }
 
         .admin-trigger:hover {
@@ -1293,8 +1297,8 @@
         </div>
     </footer>
 
-    <!-- Botón de acceso admin (oculto) -->
-    <button class="admin-trigger" onclick="openAdminLogin()" title="Acceso Administrador">🔐</button>
+    <!-- Botón de acceso admin (oculto, se activa con Ctrl+Shift+A) -->
+    <button class="admin-trigger" id="adminTrigger" onclick="openAdminLogin()" title="Acceso Administrador">🔐</button>
 
     <!-- Modals -->
     <div id="avisoLegal" class="modal">
@@ -1583,5 +1587,3 @@
                 e.preventDefault();
                 openAdminLogin();
             }
-
-
