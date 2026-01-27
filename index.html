@@ -1194,7 +1194,104 @@
             </div>
         </div>
     </section>
+    <!-- ==================== SECCIÓN TESTIMONIOS ==================== -->
+    <section id="testimonios">
+        <h2 data-i18n="testimonials.title">Testimonios</h2>
+        <p class="section-subtitle" data-i18n="testimonials.subtitle">
+            Opiniones reales de clientes que confiaron en nuestros servicios legales
+        </p>
 
+        <!-- Resumen de Calificaciones -->
+        <div class="reviews-summary">
+            <div class="rating-big">
+                <span id="avgRating">4.9</span>/5
+                <div class="stars">★★★★★</div>
+                <small id="totalReviews" data-i18n="testimonials.based">Basado en 6 reseñas</small>
+            </div>
+
+            <div class="rating-bars">
+                <div class="bar">
+                    <span>5 ★</span>
+                    <div><i style="width:90%"></i></div>
+                </div>
+                <div class="bar">
+                    <span>4 ★</span>
+                    <div><i style="width:10%"></i></div>
+                </div>
+                <div class="bar">
+                    <span>3 ★</span>
+                    <div><i style="width:0%"></i></div>
+                </div>
+                <div class="bar">
+                    <span>2 ★</span>
+                    <div><i style="width:0%"></i></div>
+                </div>
+                <div class="bar">
+                    <span>1 ★</span>
+                    <div><i style="width:0%"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Testimonios -->
+        <div id="testimonialsGrid" class="testimonials-grid"></div>
+
+        <!-- Formulario Público -->
+        <div class="public-form">
+            <h3 data-i18n="testimonials.form.title">Comparte tu Experiencia</h3>
+            <p data-i18n="testimonials.form.description" style="text-align:center; color:#546e7a; margin-bottom:2rem;">
+                Tu opinión es importante para nosotros y ayuda a otros clientes a tomar mejores decisiones
+            </p>
+            <form id="publicTestimonialForm" action="https://formspree.io/f/xqeeadjv" method="POST">
+                <input type="hidden" name="_subject" value="Nuevo Testimonio - BitStk Legal">
+                <div class="form-group">
+                    <label for="publicName" data-i18n="testimonials.form.name">Nombre completo *</label>
+                    <input type="text" id="publicName" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="publicEmail" data-i18n="testimonials.form.email">Email *</label>
+                    <input type="email" id="publicEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="publicTestimonio" data-i18n="testimonials.form.testimonial">Tu testimonio *</label>
+                    <textarea id="publicTestimonio" name="testimonio" required data-i18n-placeholder="testimonials.form.placeholder"></textarea>
+                </div>
+                <button type="submit" data-i18n="testimonials.form.submit">Enviar Testimonio</button>
+            </form>
+        </div>
+
+        <!-- Panel Administrador (Oculto) -->
+        <div id="adminPanel" style="display:none;">
+            <h3>🔧 Panel de Administración</h3>
+            <input type="text" id="adminName" placeholder="Nombre completo del cliente">
+            <select id="adminRating">
+                <option value="5">★★★★★ (5 estrellas - Excelente)</option>
+                <option value="4">★★★★☆ (4 estrellas - Muy bueno)</option>
+                <option value="3">★★★☆☆ (3 estrellas - Bueno)</option>
+                <option value="2">★★☆☆☆ (2 estrellas - Regular)</option>
+                <option value="1">★☆☆☆☆ (1 estrella - Malo)</option>
+            </select>
+            <textarea id="adminText" placeholder="Texto del testimonio..."></textarea>
+            <input type="hidden" id="editingId">
+            <div style="display:flex; flex-wrap:wrap; gap:1rem;">
+                <button onclick="saveTestimonial()" style="flex:1; min-width:200px;">💾 Guardar Testimonio</button>
+                <button onclick="cancelEdit()" class="btn-cancel" style="flex:1; min-width:200px;">❌ Cancelar</button>
+                <button onclick="logoutAdmin()" style="background:#e74c3c; flex:1; min-width:200px;">🚪 Cerrar Sesión</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Login Administrador -->
+    <div id="loginModal" class="modal">
+        <div class="login-content">
+            <h3>🔐 Acceso Administrador</h3>
+            <input type="password" id="adminPassword" placeholder="Ingresa la contraseña">
+            <div class="login-buttons">
+                <button onclick="checkAdminPassword()">Ingresar</button>
+                <button onclick="closeLoginModal()" class="btn-cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
     <section id="contacto">
         <h2 data-i18n="contact.title">Contacto</h2>
         <p class="section-subtitle" data-i18n="contact.subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
@@ -1526,6 +1623,7 @@
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
                 <h3
+
 
 
 
