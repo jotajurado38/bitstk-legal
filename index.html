@@ -5,6 +5,432 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BitStk Legal - Recuperación Internacional de Capitales</title>
     <link rel="icon" type="image/png" href="favicon.png">
+        /* ==================== ESTILOS TESTIMONIOS ==================== */
+        #testimonios {
+            text-align: center;
+        }
+
+        .reviews-summary {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(46, 204, 113, 0.05));
+            border-radius: 15px;
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .rating-big {
+            text-align: center;
+        }
+
+        .rating-big span {
+            font-size: 4rem;
+            color: #3498db;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .rating-big .stars {
+            color: #f1c40f;
+            font-size: 2rem;
+            margin: 1rem 0 0.5rem 0;
+            letter-spacing: 2px;
+        }
+
+        .rating-big small {
+            color: #546e7a;
+            font-size: 1.05rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .rating-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .rating-bars .bar {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .rating-bars .bar span {
+            min-width: 50px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .rating-bars .bar > div {
+            flex: 1;
+            background: #e8eced;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .rating-bars .bar i {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            border-radius: 6px;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #3498db, #2ecc71);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(52, 152, 219, 0.2);
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .testimonial-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-info strong {
+            display: block;
+            color: #1a2a3a;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+
+        .stars {
+            color: #f1c40f;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .verified {
+            color: #2ecc71;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .testimonial-card p {
+            color: #546e7a;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-card small {
+            color: #95a5a6;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .admin-actions {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e8eced;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .admin-actions button {
+            padding: 0.7rem 1.3rem;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-edit {
+            background: #3498db;
+        }
+
+        .btn-edit:hover {
+            background: #2980b9;
+        }
+
+        .btn-delete {
+            background: #e74c3c;
+        }
+
+        .btn-delete:hover {
+            background: #c0392b;
+        }
+
+        /* PANEL ADMINISTRACIÓN */
+        #adminPanel {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.08), rgba(46, 204, 113, 0.08));
+            padding: 3.5rem;
+            border-radius: 16px;
+            margin-top: 4.5rem;
+            border: 2px solid rgba(52, 152, 219, 0.25);
+            box-shadow: 0 8px 24px rgba(52, 152, 219, 0.1);
+        }
+
+        #adminPanel h3 {
+            color: #1a2a3a;
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        #adminPanel input,
+        #adminPanel select,
+        #adminPanel textarea {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        #adminPanel input:focus,
+        #adminPanel select:focus,
+        #adminPanel textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        #adminPanel textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        #adminPanel button {
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FORMULARIO PÚBLICO */
+        .public-form {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.04), rgba(46, 204, 113, 0.04));
+            padding: 3.5rem;
+            border-radius: 16px;
+            margin-top: 4.5rem;
+            border: 2px solid rgba(52, 152, 219, 0.15);
+        }
+
+        .public-form h3 {
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .public-form .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.8rem;
+        }
+
+        .public-form label {
+            margin-bottom: 0.6rem;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .public-form input,
+        .public-form textarea {
+            padding: 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .public-form input:focus,
+        .public-form textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .public-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* MODAL LOGIN */
+        #loginModal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+        }
+
+        #loginModal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .login-content {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .login-content h3 {
+            color: #1a2a3a;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .login-content input {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+
+        .login-content input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .login-content .login-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .login-content button {
+            flex: 1;
+        }
+
+        .btn-cancel {
+            background: #95a5a6 !important;
+        }
+
+        .btn-cancel:hover {
+            background: #7f8c8d !important;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .reviews-summary {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2rem;
+            }
+
+            .rating-big span {
+                font-size: 3rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem;
+            }
+
+            #adminPanel, .public-form {
+                padding: 2rem;
+            }
+
+            .login-content {
+                padding: 2.5rem 2rem;
+            }
+        }
+
     <style>
         * {
             margin: 0;
@@ -1101,4 +1527,5 @@
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
                 <h3
+
 
