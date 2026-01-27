@@ -1,239 +1,1103 @@
-<!-- ======================================================
-     BITSTK LEGAL – INDEX.HTML COMPLETO CON TESTIMONIOS
-     ====================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BitStk Legal - Recuperación Internacional de Capitales</title>
-<link rel="icon" type="image/png" href="favicon.png">
-
-<style>
-/* =======================
-   TODO TU CSS ORIGINAL
-   ======================= */
-/* ⚠️ (SIN CAMBIOS – OMITIDO AQUÍ POR BREVEDAD EN LA EXPLICACIÓN)
-   👉 EN TU CASO REAL, ESTE BLOQUE CONTIENE EXACTAMENTE
-   👉 EL MISMO CSS QUE YA ME ENVIASTE
-*/
-
-/* =======================
-   TESTIMONIOS – NUEVO CSS
-   ======================= */
-.testimonials-summary {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
-}
-
-.rating-box {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(52,152,219,.1), rgba(46,204,113,.1));
-    padding: 2.5rem;
-    border-radius: 15px;
-}
-
-.rating-score {
-    font-size: 4rem;
-    font-weight: 800;
-    color: #3498db;
-}
-
-.stars {
-    color: #f1c40f;
-    font-size: 1.5rem;
-    margin: .5rem 0;
-}
-
-.rating-bars div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: .6rem;
-}
-
-.bar {
-    flex: 1;
-    height: 8px;
-    background: #ecf0f1;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.bar span {
-    display: block;
-    height: 100%;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 2rem;
-}
-
-.testimonial {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.1);
-}
-
-.avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #3498db;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
-
-.testimonial-header {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.admin-panel {
-    display:none;
-    margin-top:3rem;
-    background:#f8f9fa;
-    padding:2rem;
-    border-radius:10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitStk Legal - Recuperación Internacional de Capitales</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .shape {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .shape1 { width: 300px; height: 300px; background: #3498db; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape2 { width: 200px; height: 200px; background: #2ecc71; top: 60%; left: 70%; animation-delay: 2s; }
+        .shape3 { width: 150px; height: 150px; background: #e74c3c; top: 30%; right: 10%; animation-delay: 4s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(30px); }
+        }
+        
+        header {
+            background: rgba(15, 32, 39, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #3498db;
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(52, 152, 219, 0.3);
+            border-color: #3498db;
+        }
+        
+        .lang-btn.active {
+            background: #3498db;
+            border-color: #3498db;
+        }
+        
+        .hero {
+            position: relative;
+            background: 
+                linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(52,152,219,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="%230f2027"/><rect width="1200" height="600" fill="url(%23grid)"/><g opacity="0.3"><path d="M100,400 L200,350 L300,380 L400,300 L500,320 L600,250 L700,280 L800,200 L900,230 L1000,180 L1100,150" fill="none" stroke="%233498db" stroke-width="3"/><circle cx="100" cy="400" r="5" fill="%233498db"/><circle cx="300" cy="380" r="5" fill="%233498db"/><circle cx="600" cy="250" r="5" fill="%233498db"/><circle cx="1000" cy="180" r="5" fill="%233498db"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 2rem 8rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(15,32,39,0.8) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            color: #ecf0f1;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stats {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            margin-top: -4rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+        }
+        
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #546e7a;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #34495e;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            margin: 2rem 0;
+        }
+        
+        .regulatory-note {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(192, 57, 43, 0.05));
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            margin-top: 2rem;
+        }
+        
+        .regulatory-note strong {
+            color: #c0392b;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #3498db, #2ecc71);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(52, 152, 219, 0.3);
+            border-color: #3498db;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: #1a2a3a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #546e7a;
+            line-height: 1.9;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(46, 204, 113, 0.05));
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid rgba(52, 152, 219, 0.2);
+        }
+        
+        .contact-info h3 {
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-item strong {
+            color: #2c4a62;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .office-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(52, 152, 219, 0.2);
+        }
+        
+        .office-section h4 {
+            color: #2c4a62;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .office {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .office strong {
+            color: #1a2a3a;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        input, textarea {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        footer {
+            background: rgba(15, 32, 39, 0.98);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-content p {
+            margin-bottom: 1rem;
+            color: #bdc3c7;
+        }
+        
+        .legal-links {
+            margin: 2rem 0;
+        }
+        
+        .legal-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .legal-links a:hover {
+            color: #2ecc71;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #95a5a6;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: #2c3e50;
+        }
+        
+        .modal-content h2 {
+            color: #1a2a3a;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            padding-right: 3rem;
+        }
+        
+        .modal-content h3 {
+            color: #2c4a62;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .modal-content p {
+            color: #546e7a;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-content li {
+            color: #546e7a;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="bg-animation"></div>
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
 
-<!-- TODO TU BODY ORIGINAL (header, hero, stats, secciones) -->
+    <header>
+        <nav>
+            <div class="logo">BitStk Legal</div>
+            <div class="nav-content">
+                <ul>
+                    <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#quienes-somos" data-i18n="nav.about">Quiénes Somos</a></li>
+                    <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+                    <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+                </ul>
+                <div class="language-selector">
+                    <button class="lang-btn active" onclick="changeLanguage('es')">🇪🇸 ES</button>
+                    <button class="lang-btn" onclick="changeLanguage('en')">🇺🇸 EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<!-- ======================================================
-     TESTIMONIOS – NUEVA SECCIÓN
-     ====================================================== -->
-<section id="testimonios">
-<h2 data-i18n="testimonials.title">Testimonios de Clientes</h2>
-<p class="section-subtitle" data-i18n="testimonials.subtitle">
-Experiencias reales de clientes que confiaron en BitStk Legal
-</p>
+    <div class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>BitStk Legal</h1>
+            <div class="subtitle" data-i18n="hero.subtitle">Recuperación Internacional de Capitales</div>
+            <p data-i18n="hero.description">Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.</p>
+        </div>
+    </div>
 
-<div class="testimonials-summary">
-<div class="rating-box">
-<div class="rating-score" id="avgRating">5.0</div>
-<div class="stars">★★★★★</div>
-<p><span id="totalReviews">0</span> reseñas verificadas</p>
-</div>
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label" data-i18n="stats.experience">Años de Experiencia</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label" data-i18n="stats.jurisdictions">Jurisdicciones</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$1000M+</div>
+                <div class="stat-label" data-i18n="stats.recovered">Capitales Recuperados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label" data-i18n="stats.success">Tasa de Éxito</div>
+            </div>
+        </div>
+    </div>
 
-<div class="rating-bars" id="ratingBars"></div>
-</div>
+    <section id="quienes-somos">
+        <h2 data-i18n="about.title">Quiénes Somos</h2>
+        <div class="about-content">
+            <p data-i18n="about.p1">BitStk Legal es una firma legal internacional especializada en la recuperación de capitales y el cumplimiento normativo en entornos financieros complejos y multijurisdiccionales.</p>
+            
+            <div class="highlight-box">
+                <p><strong data-i18n="about.mission.label">Nuestra misión:</strong> <span data-i18n="about.mission.text">Brindar representación legal de excelencia a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</span></p>
+            </div>
+            
+            <p data-i18n="about.p2">Operamos bajo los más altos estándares de profesionalismo, confidencialidad y compromiso ético. Nuestro equipo multidisciplinario combina expertise legal con conocimiento profundo de mercados financieros internacionales, regulación bancaria y cooperación judicial transnacional.</p>
+            
+            <p data-i18n="about.p3">Con presencia en Nueva York y San Francisco, y red de corresponsalía global, coordinamos estrategias legales efectivas que protegen los intereses patrimoniales de nuestros clientes frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas.</p>
+            
+            <p data-i18n="about.p4">Nuestro enfoque integra negociaciones estratégicas, acciones judiciales coordinadas y colaboración con autoridades y asesores internacionales, siempre orientado a la restitución efectiva del patrimonio afectado.</p>
+        </div>
+    </section>
 
-<div class="testimonials-grid" id="testimonialsGrid"></div>
+    <section id="grupo-empresarial">
+        <h2 data-i18n="group.title">Grupo Empresarial BitStk</h2>
+        <p class="section-subtitle" data-i18n="group.subtitle">Solidez corporativa internacional | Cumplimiento | Transparencia</p>
+        
+        <div class="about-content">
+            <p data-i18n="group.p1">BitStk Legal forma parte de un grupo empresarial internacional con presencia en distintas jurisdicciones, especializado en soluciones legales, recuperación internacional de capitales y cumplimiento normativo.</p>
+            
+            <p data-i18n="group.p2">El grupo mantiene vínculos históricos con entidades fintech y tecnológicas establecidas en el Reino Unido, incluyendo Bitstocks Ltd, empresa que ha operado bajo marcos regulatorios financieros británicos como agente registrado ante la Financial Conduct Authority (FCA), bajo el Reference Number: 902839.</p>
+            
+            <p data-i18n="group.p3">Cada entidad del grupo opera de manera jurídica y funcionalmente independiente, conforme a las leyes y regulaciones aplicables en su respectiva jurisdicción.</p>
+            
+            <p data-i18n="group.p4">BitStk Legal desarrolla exclusivamente actividades jurídicas, de cumplimiento normativo y consultoría legal internacional, sin prestar servicios financieros regulados ni actuar como entidad financiera.</p>
+            
+            <div class="regulatory-note">
+                <strong data-i18n="group.regulatory.title">Nota regulatoria:</strong>
+                <p data-i18n="group.regulatory.text">BitStk Legal no se encuentra regulada por la Financial Conduct Authority (FCA) ni presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.</p>
+            </div>
+        </div>
+    </section>
 
-<h3 style="margin-top:4rem;">Dejar un testimonio</h3>
-<form id="testimonialForm" class="contact-form">
-<input type="text" id="tName" placeholder="Nombre" required>
-<input type="text" id="tCountry" placeholder="País" required>
-<select id="tRating" required>
-<option value="">Calificación</option>
-<option value="5">★★★★★</option>
-<option value="4">★★★★</option>
-<option value="3">★★★</option>
-<option value="2">★★</option>
-<option value="1">★</option>
-</select>
-<textarea id="tComment" placeholder="Comentario" required></textarea>
-<button type="submit">Enviar Testimonio</button>
-</form>
+    <section id="servicios">
+        <h2 data-i18n="services.title">Servicios Especializados</h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3 data-i18n="services.compliance.title">Cumplimiento Normativo Internacional (Compliance)</h3>
+                <p data-i18n="services.compliance.p1">Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.</p>
+                <p style="margin-top: 1rem;" data-i18n="services.compliance.p2">Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="admin-panel" id="adminPanel">
-<h3>Panel Admin</h3>
-<div id="adminList"></div>
-</div>
-</section>
+    <section id="contacto">
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 data-i18n="contact.info.title">Información de Contacto</h3>
+                <div class="contact-item">
+                    <strong>📧 <span data-i18n="contact.email.label">Email Corporativo</span></strong>
+                    <span>soporte@bitstk.online</span>
+                </div>
+                <div class="contact-item">
+                    <strong>📱 <span data-i18n="contact.whatsapp.label">WhatsApp Legal y Cartera</span></strong>
+                    <span>+1 (561) 240-4539</span>
+                </div>
+                <div class="contact-item">
+                    <strong>🕐 <span data-i18n="contact.hours.label">Horario de Atención</span></strong>
+                    <span data-i18n="contact.hours.text">Lunes a Viernes, 9:00 AM - 6:00 PM EST</span>
+                </div>
+                
+                <div class="office-section">
+                    <h4>🏢 <span data-i18n="contact.offices.title">Nuestras Oficinas</span></h4>
+                    <div class="office">
+                        <strong>New York Office</strong>
+                        98 Park Avenue, Suite 1000<br>
+                        New York, NY 10178<br>
+                        United States
+                    </div>
+                    <div class="office">
+                        <strong>San Francisco Office</strong>
+                        88 California Street, Suite 1050<br>
+                        San Francisco, CA 94111<br>
+                        United States
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" action="https://formspree.io/f/xqeeadjv" method="POST">
+                <div class="form-group">
+                    <label for="nombre" data-i18n="contact.form.name">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" data-i18n="contact.form.email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asunto" data-i18n="contact.form.subject">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" data-i18n-placeholder="contact.form.subject.placeholder">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje" data-i18n="contact.form.message">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" required data-i18n-placeholder="contact.form.message.placeholder"></textarea>
+                </div>
+                
+                <button type="submit" data-i18n="contact.form.submit">Enviar Consulta Confidencial</button>
+            </form>
+        </div>
+    </section>
 
-<!-- TODO TU FOOTER + MODALES ORIGINALES -->
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem;"><strong>BitStk Legal</strong></p>
+            <p data-i18n="footer.tagline">Recuperación Internacional de Capitales | Cumplimiento Normativo</p>
+            
+            <div class="legal-links">
+                <a href="#" onclick="openModal('avisoLegal'); return false;" data-i18n="footer.legal">Aviso Legal</a>
+                <a href="#" onclick="openModal('privacidad'); return false;" data-i18n="footer.privacy">Política de Privacidad</a>
+                <a href="#" onclick="openModal('cookies'); return false;" data-i18n="footer.cookies">Política de Cookies</a>
+                <a href="#" onclick="openModal('terminos'); return false;" data-i18n="footer.terms">Términos y Condiciones</a>
+            </div>
+            
+            <p style="margin-top: 2rem;">© 2025 BitStk Legal. <span data-i18n="footer.rights">Todos los derechos reservados</span>.</p>
+            
+            <p style="font-size: 0.9rem; margin-top: 2rem; color: #95a5a6; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                <strong data-i18n="footer.disclaimer.title">Aviso Importante:</strong> <span data-i18n="footer.disclaimer.text">La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable.</span>
+            </p>
+        </div>
+    </footer>
 
-<script>
-/* ======================================================
-   TESTIMONIOS – JS
-   ====================================================== */
-let testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+    <!-- Modals simplificados - contenido no traducido porque son muy extensos -->
+    <div id="avisoLegal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('avisoLegal')">&times;</button>
+            <h2>Aviso Legal</h2>
+            <h3>1. Titularidad</h3>
+            <p>El presente sitio web es operado por BitStk Legal, firma dedicada a servicios de recuperación internacional de capitales, cumplimiento normativo y consultoría legal.</p>
+            <h3>2. Limitación de Responsabilidad</h3>
+            <p>La información tiene carácter meramente informativo y no constituye asesoría legal específica. BitStk Legal no garantiza resultados específicos.</p>
+        </div>
+    </div>
 
-function renderTestimonials(){
-const grid=document.getElementById('testimonialsGrid');
-grid.innerHTML='';
-const approved=testimonials.filter(t=>t.approved);
-approved.forEach(t=>{
-grid.innerHTML+=`
-<div class="testimonial">
-<div class="testimonial-header">
-<div class="avatar">${t.name[0]}</div>
-<div>
-<strong>${t.name}</strong><br>
-${'★'.repeat(t.rating)}
-</div>
-</div>
-<p>${t.comment}</p>
-</div>`;
-});
-document.getElementById('totalReviews').textContent=approved.length;
-}
+    <div id="privacidad" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
+            <h2>Política de Privacidad</h2>
+            <h3>1. Protección de Datos</h3>
+            <p>BitStk Legal se compromete a proteger la privacidad y los datos personales de los usuarios.</p>
+            <h3>2. Uso de Datos</h3>
+            <p>Los datos se utilizan exclusivamente para gestión de consultas y prestación de servicios legales.</p>
+        </div>
+    </div>
 
-document.getElementById('testimonialForm').onsubmit=e=>{
-e.preventDefault();
-testimonials.push({
-name:tName.value,
-country:tCountry.value,
-rating:+tRating.value,
-comment:tComment.value,
-approved:false
-});
-localStorage.setItem('testimonials',JSON.stringify(testimonials));
-alert('Testimonio enviado para revisión');
-e.target.reset();
-};
+    <div id="cookies" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('cookies')">&times;</button>
+            <h2>Política de Cookies</h2>
+            <h3>1. Cookies</h3>
+            <p>Este sitio utiliza cookies técnicas y analíticas para mejorar la experiencia del usuario.</p>
+        </div>
+    </div>
 
-document.addEventListener('keydown',e=>{
-if(e.ctrlKey && e.shiftKey && e.key==='A'){
-const pass=prompt('Contraseña admin');
-if(pass==='bitstk2025'){
-document.getElementById('adminPanel').style.display='block';
-renderAdmin();
-}
-}
-});
+    <div id="terminos" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('terminos')">&times;</button>
+            <h2>Términos y Condiciones</h2>
+            <h3>1. Aceptación</h3>
+            <p>El acceso implica la aceptación de estos términos y condiciones.</p>
+        </div>
+    </div>
 
-function renderAdmin(){
-const admin=document.getElementById('adminList');
-admin.innerHTML='';
-testimonials.forEach((t,i)=>{
-admin.innerHTML+=`
-<div>
-<strong>${t.name}</strong> - ${t.comment}
-<button onclick="approve(${i})">Aprobar</button>
-<button onclick="del(${i})">Eliminar</button>
-</div>`;
-});
-}
+    <script>
+        // Traducciones
+        const translations = {
+            es: {
+                "nav.home": "Inicio",
+                "nav.about": "Quiénes Somos",
+                "nav.services": "Servicios",
+                "nav.contact": "Contacto",
+                "hero.subtitle": "Recuperación Internacional de Capitales",
+                "hero.description": "Firma legal especializada en la recuperación de activos y cumplimiento normativo internacional. Protegemos su patrimonio con estrategias jurídicas coordinadas a nivel global.",
+                "stats.experience": "Años de Experiencia",
+                "stats.jurisdictions": "Jurisdicciones",
+                "stats.recovered": "Capitales Recuperados",
+                "stats.success": "Tasa de Éxito",
+                "about.title": "Quiénes Somos",
+                "about.p1": "BitStk Legal es una firma legal internacional especializada en la recuperación de capitales y el cumplimiento normativo en entornos financieros complejos y multijurisdiccionales.",
+                "about.mission.label": "Nuestra misión:",
+                "about.mission.text": "Brindar representación legal de excelencia a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.",
+                "about.p2": "Operamos bajo los más altos estándares de profesionalismo, confidencialidad y compromiso ético. Nuestro equipo multidisciplinario combina expertise legal con conocimiento profundo de mercados financieros internacionales, regulación bancaria y cooperación judicial transnacional.",
+                "about.p3": "Con presencia en Nueva York y San Francisco, y red de corresponsalía global, coordinamos estrategias legales efectivas que protegen los intereses patrimoniales de nuestros clientes frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas.",
+                "about.p4": "Nuestro enfoque integra negociaciones estratégicas, acciones judiciales coordinadas y colaboración con autoridades y asesores internacionales, siempre orientado a la restitución efectiva del patrimonio afectado.",
+                "group.title": "Grupo Empresarial BitStk",
+                "group.subtitle": "Solidez corporativa internacional | Cumplimiento | Transparencia",
+                "group.p1": "BitStk Legal forma parte de un grupo empresarial internacional con presencia en distintas jurisdicciones, especializado en soluciones legales, recuperación internacional de capitales y cumplimiento normativo.",
+                "group.p2": "El grupo mantiene vínculos históricos con entidades fintech y tecnológicas establecidas en el Reino Unido, incluyendo Bitstocks Ltd, empresa que ha operado bajo marcos regulatorios financieros británicos como agente registrado ante la Financial Conduct Authority (FCA), bajo el Reference Number: 902839.",
+                "group.p3": "Cada entidad del grupo opera de manera jurídica y funcionalmente independiente, conforme a las leyes y regulaciones aplicables en su respectiva jurisdicción.",
+                "group.p4": "BitStk Legal desarrolla exclusivamente actividades jurídicas, de cumplimiento normativo y consultoría legal internacional, sin prestar servicios financieros regulados ni actuar como entidad financiera.",
+                "group.regulatory.title": "Nota regulatoria:",
+                "group.regulatory.text": "BitStk Legal no se encuentra regulada por la Financial Conduct Authority (FCA) ni presta servicios financieros. Su actividad se limita exclusivamente a servicios legales, de cumplimiento y consultoría, conforme al marco legal aplicable.",
+                "services.title": "Servicios Especializados",
+                "services.subtitle": "Soluciones jurídicas integrales para la protección y recuperación de su patrimonio en el ámbito internacional",
+                "services.recovery.title": "Recuperación Internacional de Capitales",
+                "services.recovery.p1": "Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.",
+                "services.recovery.p2": "Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.",
+                "services.compliance.title": "Cumplimiento Normativo Internacional (Compliance)",
+                "services.compliance.p1": "Ofrecemos servicios de Cumplimiento Normativo Internacional, enfocados en la prevención de riesgos legales, financieros y reputacionales en entornos regulatorios complejos y multijurisdiccionales.",
+                "services.compliance.p2": "Asesoramos en el diseño e implementación de programas de compliance, control interno y prevención de fraude, alineados con estándares y buenas prácticas internacionales, fortaleciendo la gobernanza corporativa y la seguridad jurídica de nuestros clientes.",
+                "contact.title": "Contacto",
+                "contact.subtitle": "Estamos disponibles para atender sus consultas de manera confidencial y profesional",
+                "contact.info.title": "Información de Contacto",
+                "contact.email.label": "Email Corporativo",
+                "contact.whatsapp.label": "WhatsApp Legal y Cartera",
+                "contact.hours.label": "Horario de Atención",
+                "contact.hours.text": "Lunes a Viernes, 9:00 AM - 6:00 PM EST",
+                "contact.offices.title": "Nuestras Oficinas",
+                "contact.form.name": "Nombre completo *",
+                "contact.form.email": "Correo electrónico *",
+                "contact.form.subject": "Asunto",
+                "contact.form.subject.placeholder": "Ej: Consulta sobre recuperación de capitales",
+                "contact.form.message": "Mensaje *",
+                "contact.form.message.placeholder": "Describa brevemente su situación. Toda información será tratada de manera confidencial.",
+                "contact.form.submit": "Enviar Consulta Confidencial",
+                "footer.tagline": "Recuperación Internacional de Capitales | Cumplimiento Normativo",
+                "footer.legal": "Aviso Legal",
+                "footer.privacy": "Política de Privacidad",
+                "footer.cookies": "Política de Cookies",
+                "footer.terms": "Términos y Condiciones",
+                "footer.rights": "Todos los derechos reservados",
+                "footer.disclaimer.title": "Aviso Importante:",
+                "footer.disclaimer.text": "La información contenida en este sitio web tiene carácter informativo general y no constituye asesoría legal específica ni garantía de resultados. Cada caso es evaluado individualmente conforme a sus circunstancias particulares y al marco legal aplicable."
+            },
+            en: {
+                "nav.home": "Home",
+                "nav.about": "About Us",
+                "nav.services": "Services",
+                "nav.contact": "Contact",
+                "hero.subtitle": "International Capital Recovery",
+                "hero.description": "Legal firm specialized in asset recovery and international regulatory compliance. We protect your assets with globally coordinated legal strategies.",
+                "stats.experience": "Years of Experience",
+                "stats.jurisdictions": "Jurisdictions",
+                "stats.recovered": "Recovered Capital",
+                "stats.success": "Success Rate",
+                "about.title": "About Us",
+                "about.p1": "BitStk Legal is an international legal firm specialized in capital recovery and regulatory compliance in complex and multi-jurisdictional financial environments.",
+                "about.mission.label": "Our mission:",
+                "about.mission.text": "Provide legal representation of excellence to individuals and companies affected by financial fraud, cross-border scams, fund mismanagement or unfair institutional practices.",
+                "about.p2": "We operate under the highest standards of professionalism, confidentiality and ethical commitment. Our multidisciplinary team combines legal expertise with deep knowledge of international financial markets, banking regulation and transnational judicial cooperation.",
+                "about.p3": "With presence in New York and San Francisco, and a global correspondent network, we coordinate effective legal strategies that protect our clients' asset interests against financial entities, investment funds, intermediaries and public or private organizations.",
+                "about.p4": "Our approach integrates strategic negotiations, coordinated judicial actions and collaboration with authorities and international advisors, always oriented towards the effective restitution of affected assets.",
+                "group.title": "BitStk Corporate Group",
+                "group.subtitle": "International corporate strength | Compliance | Transparency",
+                "group.p1": "BitStk Legal is part of an international corporate group with presence in different jurisdictions, specialized in legal solutions, international capital recovery and regulatory compliance.",
+                "group.p2": "The group maintains historical ties with fintech and technology entities established in the United Kingdom, including Bitstocks Ltd, a company that has operated under British financial regulatory frameworks as a registered agent with the Financial Conduct Authority (FCA), under Reference Number: 902839.",
+                "group.p3": "Each entity of the group operates legally and functionally independent, in accordance with the laws and regulations applicable in its respective jurisdiction.",
+                "group.p4": "BitStk Legal exclusively develops legal, regulatory compliance and international legal consulting activities, without providing regulated financial services or acting as a financial entity.",
+                "group.regulatory.title": "Regulatory notice:",
+                "group.regulatory.text": "BitStk Legal is not regulated by the Financial Conduct Authority (FCA) nor provides financial services. Its activity is limited exclusively to legal, compliance and consulting services, in accordance with the applicable legal framework.",
+                "services.title": "Specialized Services",
+                "services.subtitle": "Comprehensive legal solutions for the protection and recovery of your assets internationally",
+                "services.recovery.title": "International Capital Recovery",
+                "services.recovery.p1": "We provide specialized legal advice on capital recovery internationally, representing individuals and companies affected by financial fraud, cross-border scams, fund mismanagement or unfair institutional practices.",
+                "services.recovery.p2": "We act against financial entities, investment funds, intermediaries and public or private organizations, through coordinated legal strategies that include negotiations, judicial actions and cooperation with authorities and international advisors, always oriented towards the protection and restitution of client assets.",
+                "services.compliance.title": "International Regulatory Compliance",
+                "services.compliance.p1": "We offer International Regulatory Compliance services, focused on preventing legal, financial and reputational risks in complex and multi-jurisdictional regulatory environments.",
+                "services.compliance.p2": "We advise on the design and implementation of compliance programs, internal control and fraud prevention, aligned with international standards and best practices, strengthening corporate governance and legal security of our clients.",
+                "contact.title": "Contact",
+                "contact.subtitle": "We are available to attend your inquiries confidentially and professionally",
+                "contact.info.title": "Contact Information",
+                "contact.email.label": "Corporate Email",
+                "contact.whatsapp.label": "Legal & Portfolio WhatsApp",
+                "contact.hours.label": "Business Hours",
+                "contact.hours.text": "Monday to Friday, 9:00 AM - 6:00 PM EST",
+                "contact.offices.title": "Our Offices",
+                "contact.form.name": "Full name *",
+                "contact.form.email": "Email address *",
+                "contact.form.subject": "Subject",
+                "contact.form.subject.placeholder": "E.g.: Capital recovery inquiry",
+                "contact.form.message": "Message *",
+                "contact.form.message.placeholder": "Briefly describe your situation. All information will be treated confidentially.",
+                "contact.form.submit": "Submit Confidential Inquiry",
+                "footer.tagline": "International Capital Recovery | Regulatory Compliance",
+                "footer.legal": "Legal Notice",
+                "footer.privacy": "Privacy Policy",
+                "footer.cookies": "Cookie Policy",
+                "footer.terms": "Terms and Conditions",
+                "footer.rights": "All rights reserved",
+                "footer.disclaimer.title": "Important Notice:",
+                "footer.disclaimer.text": "The information contained on this website is for general informational purposes and does not constitute specific legal advice or guarantee of results. Each case is evaluated individually according to its particular circumstances and the applicable legal framework."
+            }
+        };
 
-function approve(i){testimonials[i].approved=true;save();}
-function del(i){testimonials.splice(i,1);save();}
-function save(){
-localStorage.setItem('testimonials',JSON.stringify(testimonials));
-renderTestimonials();renderAdmin();
-}
-renderTestimonials();
-</script>
+        // Función cambiar idioma
+        function changeLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
 
+        // Cargar idioma guardado
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'es';
+            if (savedLang !== 'es') {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    if (btn.textContent.includes(savedLang.toUpperCase())) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                changeLanguage(savedLang);
+            }
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && !this.hasAttribute('onclick')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                shape.style.transform = `translateY(${scrolled * (0.3 + index * 0.1)}px)`;
+            });
+        });
+    </script>
 </body>
-</html>
-
-
-
-
+</html> data-i18n="services.recovery.title">Recuperación Internacional de Capitales</h3>
+                <p data-i18n="services.recovery.p1">Prestamos asesoría legal especializada en la recuperación de capitales a nivel internacional, representando a personas y empresas afectadas por fraudes financieros, estafas transfronterizas, mala administración de fondos o prácticas institucionales injustas.</p>
+                <p style="margin-top: 1rem;" data-i18n="services.recovery.p2">Actuamos frente a entidades financieras, fondos de inversión, intermediarios y organizaciones públicas o privadas, mediante estrategias legales coordinadas que incluyen negociaciones, acciones judiciales y cooperación con autoridades y asesores internacionales, siempre orientadas a la protección y restitución del patrimonio del cliente.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3
