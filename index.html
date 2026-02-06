@@ -399,7 +399,6 @@
             text-align: justify;
         }
 
-        /* ESTILOS TESTIMONIOS */
         .testimonials-summary {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -1064,12 +1063,11 @@
             </div>
         </div>
     </section>
-    <!-- SECCIÓN DE TESTIMONIOS -->
+
     <section id="testimonios">
         <h2 data-i18n="testimonials.title">Testimonios de Clientes</h2>
         <p class="section-subtitle" data-i18n="testimonials.subtitle">Lo que nuestros clientes dicen sobre nuestros servicios</p>
         
-        <!-- Resumen de calificaciones -->
         <div class="testimonials-summary">
             <div class="rating-overview">
                 <div class="rating-number" id="averageRating">4.9</div>
@@ -1116,10 +1114,8 @@
             </div>
         </div>
 
-        <!-- Grid de testimonios -->
         <div class="testimonials-grid" id="testimonialsGrid"></div>
 
-        <!-- Formulario público para enviar testimonios -->
         <div class="public-testimonial-form">
             <h3 data-i18n="testimonials.form.title">Comparte tu Experiencia</h3>
             <form class="contact-form" id="publicTestimonialForm">
@@ -1153,7 +1149,6 @@
             </form>
         </div>
 
-        <!-- Panel de administración (oculto) -->
         <div class="admin-panel" id="adminPanel">
             <div class="admin-header">
                 <h3>Panel de Administración</h3>
@@ -1166,6 +1161,11 @@
                 <div class="form-group">
                     <label for="adminName">Nombre completo *</label>
                     <input type="text" id="adminName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminDate">Fecha del testimonio *</label>
+                    <input type="date" id="adminDate" required>
                 </div>
                 
                 <div class="form-group">
@@ -1188,6 +1188,7 @@
             </form>
         </div>
     </section>
+
     <section id="contacto">
         <h2 data-i18n="contact.title">Contacto</h2>
         <p class="section-subtitle" data-i18n="contact.subtitle">Estamos disponibles para atender sus consultas de manera confidencial y profesional</p>
@@ -1270,36 +1271,26 @@
             </p>
         </div>
     </footer>
-    <!-- MODALES CON CONTENIDO AMPLIADO -->
-    <div id="avisoLegal" class="modal">
+<div id="avisoLegal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('avisoLegal')">&times;</button>
             <h2>Aviso Legal</h2>
-            
             <h3>1. Información General</h3>
             <p>El presente sitio web es propiedad y está operado por BitStk Legal, una firma legal internacional especializada en recuperación de capitales, cumplimiento normativo y consultoría legal transfronteriza.</p>
-            
             <h3>2. Objeto del Sitio Web</h3>
             <p>Este sitio web tiene como finalidad proporcionar información general sobre los servicios legales que ofrece BitStk Legal. La información aquí contenida no constituye asesoramiento legal específico ni establece una relación abogado-cliente.</p>
-            
             <h3>3. Limitación de Responsabilidad</h3>
             <p>La información contenida en este sitio web tiene carácter meramente informativo y orientativo. BitStk Legal no garantiza la exactitud, completitud o actualidad de toda la información proporcionada, ni se responsabiliza por cualquier error u omisión en el contenido.</p>
-            
             <h4>3.1 No Garantía de Resultados</h4>
             <p>Los casos legales son únicos y complejos. BitStk Legal no puede garantizar resultados específicos en ningún asunto legal. Las referencias a casos anteriores, estadísticas o resultados no deben interpretarse como garantía de resultados futuros similares.</p>
-            
             <h4>3.2 Jurisdicción</h4>
             <p>BitStk Legal opera conforme a las leyes aplicables en las jurisdicciones donde presta servicios. Los servicios pueden variar según la jurisdicción y están sujetos a las regulaciones locales correspondientes.</p>
-            
             <h3>4. Propiedad Intelectual</h3>
             <p>Todos los contenidos de este sitio web, incluyendo pero no limitándose a textos, gráficos, logotipos, imágenes y software, son propiedad de BitStk Legal o sus licenciantes y están protegidos por las leyes de propiedad intelectual aplicables.</p>
-            
             <h3>5. Enlaces Externos</h3>
             <p>Este sitio web puede contener enlaces a sitios web de terceros. BitStk Legal no controla ni se responsabiliza por el contenido, políticas de privacidad o prácticas de sitios web de terceros.</p>
-            
             <h3>6. Modificaciones</h3>
             <p>BitStk Legal se reserva el derecho de modificar este aviso legal en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web.</p>
-            
             <h3>7. Contacto</h3>
             <p>Para cualquier consulta relacionada con este aviso legal, puede contactarnos en: soporte@bitstk.online</p>
         </div>
@@ -1309,12 +1300,9 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
             <h2>Política de Privacidad</h2>
-            
             <h3>1. Introducción</h3>
             <p>En BitStk Legal, nos comprometemos a proteger la privacidad y confidencialidad de la información personal de nuestros clientes y visitantes del sitio web. Esta Política de Privacidad describe cómo recopilamos, usamos, compartimos y protegemos su información personal.</p>
-            
             <h3>2. Información que Recopilamos</h3>
-            
             <h4>2.1 Información Proporcionada Directamente</h4>
             <p>Recopilamos información que usted nos proporciona voluntariamente, incluyendo:</p>
             <ul>
@@ -1324,7 +1312,6 @@
                 <li>Información sobre su consulta o caso legal</li>
                 <li>Cualquier otra información que elija compartir con nosotros</li>
             </ul>
-            
             <h4>2.2 Información Recopilada Automáticamente</h4>
             <p>Cuando visita nuestro sitio web, podemos recopilar automáticamente cierta información, como:</p>
             <ul>
@@ -1333,7 +1320,6 @@
                 <li>Páginas visitadas y tiempo de permanencia</li>
                 <li>Fuente de referencia</li>
             </ul>
-            
             <h3>3. Uso de la Información</h3>
             <p>Utilizamos la información recopilada para los siguientes propósitos:</p>
             <ul>
@@ -1343,7 +1329,6 @@
                 <li>Cumplir con obligaciones legales y regulatorias</li>
                 <li>Prevenir fraudes y proteger la seguridad</li>
             </ul>
-            
             <h3>4. Compartir Información</h3>
             <p>BitStk Legal no vende, alquila ni comparte su información personal con terceros, excepto en las siguientes circunstancias:</p>
             <ul>
@@ -1352,13 +1337,10 @@
                 <li>Cuando sea requerido por ley o proceso legal</li>
                 <li>Para proteger nuestros derechos, privacidad, seguridad o propiedad</li>
             </ul>
-            
             <h3>5. Seguridad de la Información</h3>
             <p>Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.</p>
-            
             <h3>6. Retención de Datos</h3>
             <p>Conservamos su información personal durante el tiempo necesario para cumplir con los propósitos descritos en esta política, a menos que la ley requiera o permita un período de retención más largo.</p>
-            
             <h3>7. Sus Derechos</h3>
             <p>Usted tiene derecho a:</p>
             <ul>
@@ -1368,13 +1350,10 @@
                 <li>Oponerse al procesamiento de su información</li>
                 <li>Retirar su consentimiento en cualquier momento</li>
             </ul>
-            
             <h3>8. Cookies</h3>
             <p>Nuestro sitio web utiliza cookies técnicas y analíticas. Para más información, consulte nuestra Política de Cookies.</p>
-            
             <h3>9. Cambios a esta Política</h3>
             <p>Podemos actualizar esta Política de Privacidad periódicamente. Le notificaremos sobre cambios significativos publicando la nueva política en nuestro sitio web.</p>
-            
             <h3>10. Contacto</h3>
             <p>Si tiene preguntas sobre esta Política de Privacidad o desea ejercer sus derechos, contáctenos en: soporte@bitstk.online</p>
         </div>
@@ -1384,12 +1363,9 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('cookies')">&times;</button>
             <h2>Política de Cookies</h2>
-            
             <h3>1. ¿Qué son las Cookies?</h3>
             <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Las cookies permiten que el sitio web reconozca su dispositivo y recuerde información sobre su visita.</p>
-            
             <h3>2. Tipos de Cookies que Utilizamos</h3>
-            
             <h4>2.1 Cookies Técnicas (Necesarias)</h4>
             <p>Estas cookies son esenciales para el funcionamiento básico del sitio web. Permiten la navegación y el uso de las funcionalidades básicas.</p>
             <ul>
@@ -1397,7 +1373,6 @@
                 <li>Cookies de preferencias de idioma</li>
                 <li>Cookies de seguridad</li>
             </ul>
-            
             <h4>2.2 Cookies Analíticas</h4>
             <p>Estas cookies nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web, proporcionando información sobre:</p>
             <ul>
@@ -1406,20 +1381,16 @@
                 <li>Tiempo de permanencia</li>
                 <li>Fuentes de tráfico</li>
             </ul>
-            
             <h4>2.3 Cookies Funcionales</h4>
             <p>Estas cookies permiten que el sitio web recuerde las elecciones que hace (como su idioma preferido) y proporcione funcionalidades mejoradas y personalizadas.</p>
-            
             <h3>3. Cookies de Terceros</h3>
             <p>Algunos servicios de terceros que utilizamos pueden establecer sus propias cookies, incluyendo:</p>
             <ul>
                 <li>Servicios de análisis web (Google Analytics)</li>
                 <li>Plataformas de comunicación</li>
             </ul>
-            
             <h3>4. Gestión de Cookies</h3>
             <p>Puede controlar y/o eliminar las cookies según desee. Para más información, visite aboutcookies.org. Puede eliminar todas las cookies que ya están en su dispositivo y configurar la mayoría de los navegadores para evitar que se almacenen.</p>
-            
             <h4>4.1 Gestión en Navegadores Principales</h4>
             <ul>
                 <li><strong>Google Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos de sitios</li>
@@ -1427,7 +1398,6 @@
                 <li><strong>Safari:</strong> Preferencias > Privacidad > Cookies y datos de sitios web</li>
                 <li><strong>Microsoft Edge:</strong> Configuración > Privacidad y servicios > Cookies</li>
             </ul>
-            
             <h3>5. Consecuencias de Deshabilitar Cookies</h3>
             <p>Si deshabilita las cookies, algunas funcionalidades del sitio web pueden no funcionar correctamente, incluyendo:</p>
             <ul>
@@ -1435,13 +1405,10 @@
                 <li>Funcionalidades de formularios</li>
                 <li>Experiencia de navegación personalizada</li>
             </ul>
-            
             <h3>6. Duración de las Cookies</h3>
             <p>Utilizamos tanto cookies de sesión (que expiran cuando cierra el navegador) como cookies persistentes (que permanecen en su dispositivo durante un período específico o hasta que las elimine).</p>
-            
             <h3>7. Actualizaciones de esta Política</h3>
             <p>Podemos actualizar esta Política de Cookies periódicamente. La fecha de la última actualización se indicará en la parte superior de esta política.</p>
-            
             <h3>8. Más Información</h3>
             <p>Para más información sobre nuestro uso de cookies o si tiene alguna pregunta, contáctenos en: soporte@bitstk.online</p>
         </div>
@@ -1451,15 +1418,11 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('terminos')">&times;</button>
             <h2>Términos y Condiciones de Uso</h2>
-            
             <h3>1. Aceptación de los Términos</h3>
             <p>Al acceder y utilizar este sitio web, usted acepta estar sujeto a estos Términos y Condiciones de Uso, todas las leyes y regulaciones aplicables, y acepta que es responsable del cumplimiento de las leyes locales aplicables.</p>
-            
             <h3>2. Uso del Sitio Web</h3>
-            
             <h4>2.1 Licencia de Uso</h4>
             <p>Se le otorga una licencia limitada, no exclusiva y no transferible para acceder y usar este sitio web únicamente para fines personales y no comerciales.</p>
-            
             <h4>2.2 Restricciones de Uso</h4>
             <p>Usted se compromete a NO:</p>
             <ul>
@@ -1470,13 +1433,10 @@
                 <li>Usar técnicas de scraping o minería de datos</li>
                 <li>Transmitir virus, malware o cualquier código malicioso</li>
             </ul>
-            
             <h3>3. Relación Abogado-Cliente</h3>
             <p>El uso de este sitio web y la presentación de información a través de formularios de contacto NO establece una relación abogado-cliente. Una relación abogado-cliente se establece únicamente mediante un acuerdo escrito formal.</p>
-            
             <h4>3.1 Confidencialidad Limitada</h4>
             <p>La información enviada a través de formularios en este sitio web puede no ser confidencial hasta que se establezca formalmente una relación abogado-cliente. No envíe información confidencial sensible hasta que hayamos acordado formalmente representarlo.</p>
-            
             <h3>4. Contenido del Usuario</h3>
             <p>Al enviar contenido a través de nuestro sitio web (comentarios, testimonios, consultas), usted:</p>
             <ul>
@@ -1485,7 +1445,6 @@
                 <li>Acepta que el contenido no viola los derechos de terceros</li>
                 <li>Acepta que el contenido no contiene material ilegal, difamatorio u ofensivo</li>
             </ul>
-            
             <h3>5. Limitación de Responsabilidad</h3>
             <p>En la máxima medida permitida por la ley:</p>
             <ul>
@@ -1494,7 +1453,6 @@
                 <li>No garantizamos la disponibilidad ininterrumpida del sitio web</li>
                 <li>No garantizamos que el sitio web esté libre de errores o virus</li>
             </ul>
-            
             <h3>6. Indemnización</h3>
             <p>Usted acepta indemnizar y mantener indemne a BitStk Legal, sus afiliados, directores, empleados y agentes de cualquier reclamo, daño, obligación, pérdida, responsabilidad, costo o deuda resultante de:</p>
             <ul>
@@ -1502,25 +1460,18 @@
                 <li>Su violación de estos Términos y Condiciones</li>
                 <li>Su violación de derechos de terceros</li>
             </ul>
-            
             <h3>7. Enlaces a Terceros</h3>
             <p>Este sitio web puede contener enlaces a sitios web de terceros. BitStk Legal no controla ni respalda estos sitios y no es responsable por su contenido o prácticas. El acceso a sitios de terceros es bajo su propio riesgo.</p>
-            
             <h3>8. Modificaciones</h3>
             <p>BitStk Legal se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web. Su uso continuado del sitio web después de cualquier cambio constituye su aceptación de los nuevos términos.</p>
-            
             <h3>9. Terminación</h3>
             <p>BitStk Legal puede, a su sola discreción, terminar o suspender su acceso al sitio web sin previo aviso por cualquier motivo, incluyendo pero no limitándose a la violación de estos Términos y Condiciones.</p>
-            
             <h3>10. Ley Aplicable y Jurisdicción</h3>
             <p>Estos Términos y Condiciones se rigen por las leyes aplicables en las jurisdicciones donde BitStk Legal opera. Cualquier disputa relacionada con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales competentes en dichas jurisdicciones.</p>
-            
             <h3>11. Divisibilidad</h3>
             <p>Si alguna disposición de estos Términos y Condiciones se considera inválida o inaplicable, las disposiciones restantes continuarán en pleno vigor y efecto.</p>
-            
             <h3>12. Acuerdo Completo</h3>
             <p>Estos Términos y Condiciones, junto con nuestra Política de Privacidad y Política de Cookies, constituyen el acuerdo completo entre usted y BitStk Legal con respecto al uso de este sitio web.</p>
-            
             <h3>13. Contacto</h3>
             <p>Para cualquier pregunta sobre estos Términos y Condiciones, contáctenos en:</p>
             <p><strong>Email:</strong> soporte@bitstk.online</p>
@@ -1528,7 +1479,6 @@
         </div>
     </div>
 
-    <!-- Modal de Login Admin -->
     <div id="adminLoginModal" class="modal">
         <div class="modal-content" style="max-width: 400px;">
             <button class="modal-close" onclick="closeModal('adminLoginModal')">&times;</button>
@@ -1542,8 +1492,8 @@
             </form>
         </div>
     </div>
+
     <script>
-        // ===== TRADUCCIONES COMPLETAS =====
         const translations = {
             es: {
                 "nav.home": "Inicio",
@@ -1683,12 +1633,10 @@
             }
         };
 
-        // ===== SISTEMA DE TESTIMONIOS =====
         let isAdmin = false;
         let currentPublicRating = 0;
         let currentAdminRating = 0;
 
-        // Testimonios iniciales de ejemplo
         const initialTestimonials = [
             {
                 id: 1,
@@ -1740,35 +1688,29 @@
             }
         ];
 
-        // Inicializar testimonios en localStorage
         function initializeTestimonials() {
             if (!localStorage.getItem('testimonials')) {
                 localStorage.setItem('testimonials', JSON.stringify(initialTestimonials));
             }
         }
 
-        // Obtener testimonios
         function getTestimonials() {
             const stored = localStorage.getItem('testimonials');
             return stored ? JSON.parse(stored) : [];
         }
 
-        // Guardar testimonios
         function saveTestimonials(testimonials) {
             localStorage.setItem('testimonials', JSON.stringify(testimonials));
         }
 
-        // Generar iniciales
         function getInitials(name) {
             return name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         }
 
-        // Generar estrellas
         function generateStars(rating) {
             return '★'.repeat(rating) + '☆'.repeat(5 - rating);
         }
 
-        // Calcular estadísticas
         function calculateStats() {
             const testimonials = getTestimonials();
             const total = testimonials.length;
@@ -1788,7 +1730,6 @@
             return { average, distribution, total };
         }
 
-        // Actualizar resumen
         function updateRatingSummary() {
             const stats = calculateStats();
             
@@ -1804,7 +1745,6 @@
             }
         }
 
-        // Renderizar testimonios
         function renderTestimonials() {
             const testimonials = getTestimonials();
             const grid = document.getElementById('testimonialsGrid');
@@ -1831,7 +1771,6 @@
             updateRatingSummary();
         }
 
-        // Sistema de calificación por estrellas
         function setupStarRating(containerId) {
             const container = document.getElementById(containerId);
             const stars = container.querySelectorAll('.star');
@@ -1857,7 +1796,6 @@
             });
         }
 
-        // Formulario público
         document.getElementById('publicTestimonialForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1870,7 +1808,6 @@
             const email = document.getElementById('publicEmail').value;
             const testimony = document.getElementById('publicTestimony').value;
 
-            // Enviar por email
             const formData = new FormData();
             formData.append('nombre', name);
             formData.append('email', email);
@@ -1895,7 +1832,6 @@
             });
         });
 
-        // Formulario admin
         document.getElementById('adminTestimonialForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1907,28 +1843,28 @@
             const id = document.getElementById('editingId').value;
             const name = document.getElementById('adminName').value;
             const testimony = document.getElementById('adminTestimony').value;
+            const date = document.getElementById('adminDate').value;
             
             const testimonials = getTestimonials();
             
             if (id) {
-                // Editar
                 const index = testimonials.findIndex(t => t.id == id);
                 if (index !== -1) {
                     testimonials[index] = {
                         ...testimonials[index],
                         name,
                         rating: currentAdminRating,
-                        text: testimony
+                        text: testimony,
+                        date: date
                     };
                 }
             } else {
-                // Agregar nuevo
                 const newTestimonial = {
                     id: Date.now(),
                     name,
                     rating: currentAdminRating,
                     text: testimony,
-                    date: new Date().toISOString().split('T')[0],
+                    date: date,
                     verified: true
                 };
                 testimonials.push(newTestimonial);
@@ -1937,15 +1873,14 @@
             saveTestimonials(testimonials);
             renderTestimonials();
             
-            // Resetear
             this.reset();
+            document.getElementById('adminDate').value = new Date().toISOString().split('T')[0];
             document.getElementById('editingId').value = '';
             currentAdminRating = 0;
             document.querySelectorAll('#adminRating .star').forEach(s => s.classList.remove('active'));
             document.getElementById('adminSubmitBtn').textContent = 'Agregar Testimonio';
         });
 
-        // Editar testimonio
         function editTestimonial(id) {
             const testimonials = getTestimonials();
             const testimonial = testimonials.find(t => t.id === id);
@@ -1955,6 +1890,7 @@
                 document.getElementById('adminName').value = testimonial.name;
                 document.getElementById('adminTestimony').value = testimonial.text;
                 currentAdminRating = testimonial.rating;
+                document.getElementById('adminDate').value = testimonial.date;
                 
                 const stars = document.querySelectorAll('#adminRating .star');
                 stars.forEach((s, index) => {
@@ -1970,7 +1906,6 @@
             }
         }
 
-        // Eliminar testimonio
         function deleteTestimonial(id) {
             if (confirm('¿Estás seguro de eliminar este testimonio?')) {
                 let testimonials = getTestimonials();
@@ -1980,7 +1915,6 @@
             }
         }
 
-        // Login admin con Ctrl+Shift+A
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.shiftKey && e.key === 'A') {
                 e.preventDefault();
@@ -1988,7 +1922,6 @@
             }
         });
 
-        // Formulario login
         document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const password = document.getElementById('adminPassword').value;
@@ -2004,14 +1937,12 @@
             }
         });
 
-        // Logout
         function logout() {
             isAdmin = false;
             document.getElementById('adminPanel').classList.remove('show');
             renderTestimonials();
         }
 
-        // ===== MODALES =====
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -2029,7 +1960,6 @@
             }
         }
 
-        // ===== CAMBIO DE IDIOMA =====
         function changeLanguage(lang, event) {
             localStorage.setItem('language', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -2045,7 +1975,6 @@
             });
         }
 
-        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -2059,7 +1988,6 @@
             });
         });
 
-        // ===== PARALLAX =====
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const shapes = document.querySelectorAll('.shape');
@@ -2068,15 +1996,12 @@
             });
         });
 
-        // ===== INICIALIZACIÓN =====
         window.addEventListener('DOMContentLoaded', () => {
-            // Inicializar testimonios
             initializeTestimonials();
             renderTestimonials();
             setupStarRating('publicRating');
             setupStarRating('adminRating');
             
-            // Cargar idioma
             const savedLang = localStorage.getItem('language') || 'es';
             if (savedLang !== 'es') {
                 document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -2093,8 +2018,5 @@
     </script>
 </body>
 </html>
-
-
-
 
 
